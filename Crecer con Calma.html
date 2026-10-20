@@ -1,0 +1,1696 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Crecer con Calma</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300..700&display=swap">
+<style>
+/* Layout: cuaderno de bolsillo — índice lateral fijo junto a una hoja de contenido; en móvil el índice se vuelve una tira deslizable. Marca: Psic. Kari Moncayo (marfil, espresso, burdeos, salvia, camel) */
+:root{
+  --paper:#F3EEE7; --surface:#FBF8F4; --ink:#2A2523; --muted:#74685F; --line:#E2D8CC;
+  --cobalt:#6D2E35; --cobalt-soft:#F1E3E0; --on-accent:#FBF8F4;
+  --sun:#C6B39A; --sun-soft:#EAE1D4; --on-sun:#2A2523; --hl:#E3D3BC;
+  --leaf:#5E6748; --leaf-soft:#E5E7DA;
+  --orange:#8E6F48; --orange-soft:#EFE5D6;
+  --coral:#9C463F; --coral-soft:#F4E1DC;
+  --sea:#E2DAD0; --sea-deep:#D3C8BA;
+  --shadow:0 1px 2px rgba(42,37,35,.05),0 10px 28px rgba(42,37,35,.07);
+  --f-display:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --f-body:"Jost","Futura","Century Gothic","Segoe UI",system-ui,sans-serif;
+  --f-hand:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --r:10px; --r-sm:6px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1E1918; --surface:#29221F; --ink:#F1EBE3; --muted:#B9ACA1; --line:#3E3430;
+    --cobalt:#DDA9A4; --cobalt-soft:#40272A; --on-accent:#1E1918;
+    --sun:#D6C2A5; --sun-soft:#383028; --on-sun:#2A2523; --hl:rgba(198,179,154,.34);
+    --leaf:#AEB792; --leaf-soft:#2D3125;
+    --orange:#D2AF84; --orange-soft:#3A2F23;
+    --coral:#E79D92; --coral-soft:#45272A;
+    --sea:#302826; --sea-deep:#272020;
+    --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 28px rgba(0,0,0,.3);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1E1918; --surface:#29221F; --ink:#F1EBE3; --muted:#B9ACA1; --line:#3E3430;
+  --cobalt:#DDA9A4; --cobalt-soft:#40272A; --on-accent:#1E1918;
+  --sun:#D6C2A5; --sun-soft:#383028; --on-sun:#2A2523; --hl:rgba(198,179,154,.34);
+  --leaf:#AEB792; --leaf-soft:#2D3125;
+  --orange:#D2AF84; --orange-soft:#3A2F23;
+  --coral:#E79D92; --coral-soft:#45272A;
+  --sea:#302826; --sea-deep:#272020;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 28px rgba(0,0,0,.3);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.015em}
+p{margin:0}
+ul,ol{margin:0;padding:0}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:6px}
+
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* Cabecera */
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px 12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);background:none;border:0;padding:0;text-align:left}
+.brand svg{width:40px;height:40px;flex:none}
+.brand b{font-family:var(--f-display);font-size:21px;font-weight:750;letter-spacing:-.02em;display:block;line-height:1.1}
+.brand small{display:block;font-size:13px;color:var(--muted);letter-spacing:.02em}
+.top-note{font-size:13px;color:var(--muted);text-align:right}
+@media (max-width:620px){.top-note{display:none}}
+
+/* Estructura */
+.shell{display:grid;grid-template-columns:212px minmax(0,1fr);gap:48px;align-items:start}
+.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);display:flex;flex-direction:column;gap:2px;padding-top:20px}
+.rail button{display:grid;text-align:left;gap:0;padding:9px 12px;border:0;border-radius:var(--r-sm);background:transparent;transition:background .15s}
+.rail button span{font-weight:700;font-size:15.5px}
+.rail button small{font-size:12.5px;color:var(--muted)}
+.rail button:hover{background:var(--cobalt-soft)}
+.rail button[aria-current="page"]{background:var(--surface);box-shadow:var(--shadow)}
+.rail button[aria-current="page"] span{color:var(--cobalt)}
+.rail-progress{margin-top:16px;padding:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.rail-progress .bar{margin-top:6px}
+@media (max-width:899px){
+  .shell{display:block}
+  .rail{flex-direction:row;overflow-x:auto;gap:6px;padding-block:10px;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--line);scrollbar-width:none;margin-bottom:20px}
+  .rail::-webkit-scrollbar{display:none}
+  .rail button{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:var(--surface)}
+  .rail button small{display:none}
+  .rail button span{font-size:14.5px}
+  .rail button[aria-current="page"]{background:var(--cobalt);border-color:var(--cobalt);box-shadow:none}
+  .rail button[aria-current="page"] span{color:var(--on-accent)}
+  .rail-progress{display:none}
+}
+main{min-width:0}
+.view{display:grid;gap:56px;padding-block:20px 120px}
+.view-head{display:grid;gap:12px;max-width:68ch}
+.eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cobalt)}
+.view-head h2{font-size:clamp(30px,4.2vw,44px);font-weight:750}
+.lead{font-size:18.5px;color:var(--muted);max-width:62ch}
+.block{display:grid;gap:20px}
+.block > h3{font-size:clamp(22px,2.6vw,28px);font-weight:700}
+.block > .sub{color:var(--muted);max-width:64ch;margin-top:-10px}
+.mk{background:linear-gradient(transparent 58%,var(--hl) 58%,var(--hl) 92%,transparent 92%);padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.lbl{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.grid > *{min-width:0}
+
+/* Botones y chips */
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 20px;font-weight:750;font-size:15.5px;border:1.5px solid transparent;transition:transform .12s,background .15s}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--cobalt);color:var(--on-accent)}
+.btn.ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn.small{padding:7px 14px;font-size:14px}
+.btn.soft{background:var(--cobalt-soft);color:var(--cobalt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:14.5px;font-weight:700;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+
+/* Inicio */
+.hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:40px;align-items:center}
+@media (max-width:980px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(36px,5.4vw,60px);font-weight:780;line-height:1.03;letter-spacing:-.03em}
+.hero-text{display:grid;gap:18px}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.note{background:var(--sun-soft);border-radius:6px 6px 18px 6px;padding:24px 24px 20px;transform:rotate(-1.2deg);box-shadow:var(--shadow);display:grid;gap:10px}
+.note .from{color:var(--coral);text-decoration:line-through;text-decoration-thickness:2px;font-size:17px}
+.note .to{font-family:var(--f-hand);font-size:31px;line-height:1.1;font-weight:700;color:var(--ink)}
+.note .row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:4px}
+.note .row small{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion:reduce){.note{transform:none}}
+
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.prose{display:grid;gap:14px;max-width:62ch}
+.prose p{font-size:17px}
+.principles{list-style:none;display:grid;gap:10px}
+.principles li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;font-size:16px}
+.principles li svg{width:22px;height:22px;color:var(--leaf);margin-top:2px}
+.principles b{display:block}
+.principles span{color:var(--muted);font-size:15px}
+
+.styles{display:grid;grid-template-columns:28px minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto 28px;gap:10px}
+.styles .ax-y{grid-row:1/3;grid-column:1;writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.styles .ax-x{grid-row:3;grid-column:2/4;text-align:center;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);align-self:center}
+.style{border-radius:var(--r);padding:18px;background:var(--surface);border:1px solid var(--line);display:grid;gap:8px;align-content:start}
+.style h4{font-size:19px}
+.style q{font-family:var(--f-hand);font-size:24px;line-height:1.1;quotes:none}
+.style p{font-size:14.5px;color:var(--muted)}
+.style.best{background:var(--leaf-soft);border-color:var(--leaf)}
+.style.best h4{color:var(--leaf)}
+@media (max-width:520px){.style q{font-size:21px}.style{padding:14px}}
+
+.route{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;list-style:none;counter-reset:r}
+@media (max-width:980px){.route{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}}
+.route button{width:100%;height:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;gap:6px;align-content:start;transition:border-color .15s,transform .15s}
+.route button:hover{border-color:var(--cobalt);transform:translateY(-2px)}
+.route .n{font-family:var(--f-display);font-size:30px;font-weight:800;color:var(--cobalt);line-height:1}
+.route b{font-size:16.5px}
+.route span{font-size:14.5px;color:var(--muted)}
+
+/* Cerebro: casa de dos pisos */
+.house-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:start}
+@media (max-width:860px){.house-wrap{grid-template-columns:1fr}}
+.roof{height:44px;background:var(--cobalt);clip-path:polygon(50% 0,100% 100%,0 100%);margin:0 -10px}
+.house{border:2.5px solid var(--ink);border-top:0;border-radius:0 0 18px 18px;overflow:hidden;background:var(--surface)}
+.floor{padding:18px 20px;display:grid;gap:6px;transition:opacity .4s,filter .4s,background .4s}
+.floor h4{font-size:19px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center}
+.floor p{font-size:15px}
+.floor.up{background:var(--cobalt-soft)}
+.floor.down{background:var(--sun-soft)}
+.tag{font-family:var(--f-body);font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.tape{background:var(--sun);color:var(--on-sun);background-image:repeating-linear-gradient(-45deg,transparent 0 8px,rgba(42,37,35,.14) 8px 12px)}
+.ready{background:var(--surface);color:var(--muted);border:1px solid var(--line)}
+.stairs{display:flex;align-items:center;gap:14px;padding:10px 20px;border-block:2px dashed var(--line);color:var(--leaf);font-weight:800;font-size:14px;position:relative}
+.stairs svg{width:84px;height:42px;flex:none;transition:opacity .4s}
+.stairs .you{margin-left:auto;font-family:var(--f-hand);font-size:22px;color:var(--leaf);opacity:0;transition:opacity .4s}
+.house[data-state="tormenta"] .floor.up{opacity:.4;filter:grayscale(1)}
+.house[data-state="tormenta"] .floor.down{background:var(--coral-soft);animation:pulse 1.4s ease-in-out infinite}
+.house[data-state="tormenta"] .stairs{color:var(--coral)}
+.house[data-state="tormenta"] .stairs svg{opacity:.35}
+.house[data-state="tormenta"] .stairs path{stroke-dasharray:5 7}
+.house[data-state="prestas"] .stairs .you{opacity:1}
+.house[data-state="prestas"] .floor.down{background:var(--leaf-soft)}
+@keyframes pulse{50%{box-shadow:inset 0 0 0 6px var(--coral)}}
+.states{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.states button{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font-weight:750;font-size:14.5px}
+.states button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.explain{display:grid;gap:14px}
+.explain h4{font-size:24px}
+.explain p{font-size:17px}
+.explain .tip{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;font-size:15.5px}
+.explain .tip b{color:var(--cobalt)}
+.credit{font-size:13px;color:var(--muted)}
+
+.facts{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:8px;align-content:start}
+.fact h4{font-size:18px}
+.fact p{font-size:15.5px;color:var(--muted)}
+
+/* Iceberg */
+.ice{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.ice-top{padding:20px 20px 0;display:grid;gap:12px}
+.berg-tip{width:min(320px,70%);margin:8px auto 0;background:var(--paper);clip-path:polygon(26% 0,74% 0,92% 100%,8% 100%);text-align:center;padding:18px 18% 14px;font-family:var(--f-display);font-weight:750;font-size:18px;line-height:1.15}
+.sea{background:linear-gradient(var(--sea),var(--sea-deep));padding:0 20px 28px;border-top:3px solid var(--cobalt)}
+.berg-body{width:min(620px,100%);margin:0 auto;background:var(--paper);clip-path:polygon(7% 0,93% 0,100% 38%,88% 100%,12% 100%,0 42%);padding:22px 13% 30px}
+.berg-body .lbl{text-align:center}
+.berg-body ul{list-style:none;display:grid;gap:8px}
+.berg-body li{font-size:15.5px;display:grid;grid-template-columns:10px 1fr;gap:10px;align-items:baseline}
+.berg-body li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cobalt);transform:translateY(-1px)}
+.sea .water{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--cobalt);padding:8px 0 10px;text-align:center}
+.ice-note{padding:14px 20px;font-size:15px;color:var(--muted);border-top:1px solid var(--line)}
+
+.needs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.need{border-radius:var(--r);padding:22px;display:grid;gap:8px}
+.need h4{font-size:22px}
+.need.a{background:var(--cobalt-soft)}
+.need.b{background:var(--sun-soft)}
+.need p{font-size:15.5px}
+
+/* Edades */
+.ages-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.age-tab{border:2px solid var(--ink);background:transparent;border-radius:14px;padding:10px 18px;display:grid;text-align:left;min-width:120px}
+.age-tab b{font-family:var(--f-display);font-size:24px;line-height:1.1}
+.age-tab small{font-size:13px;color:var(--muted)}
+.age-tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.age-tab[aria-selected="true"] small{color:var(--paper);opacity:.8}
+.age-panel{display:grid;gap:20px}
+.age-title{font-size:clamp(24px,3vw,32px)}
+.age-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px}
+@media (max-width:860px){.age-grid{grid-template-columns:1fr}}
+.areas{display:grid;gap:14px}
+.area{display:grid;grid-template-columns:110px 1fr;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.area:last-child{border-bottom:0;padding-bottom:0}
+.area b{font-size:14px;color:var(--cobalt)}
+.area p{font-size:15.5px}
+@media (max-width:480px){.area{grid-template-columns:1fr;gap:2px}}
+.list{list-style:none;display:grid;gap:9px}
+.list li{display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:15.5px;align-items:start}
+.list li svg{width:18px;height:18px;margin-top:3px}
+.list.ok svg{color:var(--leaf)}
+.list.normal svg{color:var(--cobalt)}
+.list.alert svg{color:var(--coral)}
+.expect{background:var(--sun-soft);border-radius:var(--r);padding:20px;display:grid;gap:6px}
+.expect p{font-size:16px}
+.expect .lbl{font-size:12px}
+.prose{align-content:start}
+.stack{display:grid;gap:16px;align-content:start}
+
+/* Situaciones */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.search{position:relative;flex:1 1 260px;max-width:380px}
+.search input{width:100%;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:10px 16px 10px 42px;font:inherit;font-size:15.5px}
+.search input:focus{outline:none;border-color:var(--cobalt)}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
+.count{font-size:14px;color:var(--muted)}
+.sits{display:grid;gap:10px}
+.sit{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.sit summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 20px;flex-wrap:wrap}
+.sit summary::-webkit-details-marker{display:none}
+.sit-t{font-family:var(--f-display);font-size:19.5px;font-weight:700;flex:1 1 220px}
+.ages{display:flex;gap:4px;flex-wrap:wrap}
+.age{font-size:12px;font-weight:800;border-radius:999px;padding:2px 9px;background:var(--cobalt-soft);color:var(--cobalt);font-variant-numeric:tabular-nums}
+.chev{width:12px;height:12px;border-right:2.5px solid var(--muted);border-bottom:2.5px solid var(--muted);transform:rotate(45deg);transition:transform .2s;margin:0 4px 4px}
+.sit[open] .chev{transform:rotate(-135deg);margin-bottom:-4px}
+.sit[open] summary{border-bottom:1px solid var(--line)}
+.sit-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;padding:20px}
+@media (max-width:760px){.sit-body{grid-template-columns:1fr}}
+.sit-col{display:grid;gap:20px;align-content:start}
+.why{background:var(--cobalt-soft);border-radius:var(--r-sm);padding:16px}
+.why p:last-child{font-size:16px}
+.bubbles{display:grid;gap:10px}
+.bubble{font-family:var(--f-hand);font-size:23px;line-height:1.15;font-weight:600;background:var(--paper);border:1.5px solid var(--line);border-radius:16px 16px 16px 4px;padding:10px 14px;justify-self:start}
+.steps{list-style:none;counter-reset:s;display:grid;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:15.5px;align-items:start}
+.steps li::before{content:counter(s);width:26px;height:26px;border-radius:50%;background:var(--leaf);color:var(--on-accent);font-weight:800;font-size:13px;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.avoid{background:var(--coral-soft);border-radius:var(--r-sm);padding:16px}
+.avoid .lbl{color:var(--coral)}
+.avoid ul{list-style:none;display:grid;gap:6px}
+.avoid li{font-size:15px;display:grid;grid-template-columns:16px 1fr;gap:8px}
+.avoid li::before{content:"×";font-weight:800;color:var(--coral);line-height:1.5}
+.empty{padding:32px;text-align:center;color:var(--muted);border:1.5px dashed var(--line);border-radius:var(--r)}
+
+/* Herramientas */
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.tool{text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:8px;align-content:start;transition:border-color .15s,transform .15s}
+.tool:hover{border-color:var(--cobalt);transform:translateY(-2px)}
+.tool .k{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.tool .tt{font-family:var(--f-display);font-weight:700;font-size:19px;line-height:1.15;letter-spacing:-.015em}
+.tool .ts{font-size:15px;color:var(--muted)}
+.tool .more{font-size:14px;font-weight:800;color:var(--cobalt);margin-top:4px}
+
+.builder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:820px){.builder{grid-template-columns:1fr}}
+.field{display:grid;gap:6px}
+.field label{font-size:14px;font-weight:750}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:var(--r-sm);padding:10px 12px;font:inherit;font-size:15.5px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--cobalt)}
+.fields{display:grid;gap:14px}
+.out{background:var(--leaf-soft);border-radius:var(--r);padding:24px;display:grid;gap:14px}
+.out .say{font-family:var(--f-hand);font-size:32px;line-height:1.12;font-weight:700}
+.out .say em{font-style:normal;background:linear-gradient(transparent 60%,var(--hl) 60%,var(--hl) 92%,transparent 92%)}
+.out .parts{display:flex;flex-wrap:wrap;gap:6px}
+.out .parts span{font-size:12px;font-weight:800;border-radius:999px;padding:3px 10px;background:var(--surface);color:var(--leaf)}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:620px}
+th,td{text-align:left;padding:14px 16px;vertical-align:top;font-size:15px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800}
+td.bad{color:var(--coral)}
+td.good{color:var(--leaf);font-weight:700}
+.rs{display:flex;flex-wrap:wrap;gap:8px}
+.rs span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14.5px}
+.rs b{color:var(--leaf)}
+
+/* Frases */
+.phrases{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.flip{perspective:1000px;background:none;border:0;padding:0;text-align:left;display:grid}
+.flip-in{display:grid;transition:transform .5s cubic-bezier(.3,.7,.3,1);transform-style:preserve-3d}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);padding:20px;display:grid;gap:8px;align-content:space-between;min-height:160px}
+.face.front{background:var(--surface);border:1px solid var(--line)}
+.face.back{background:var(--leaf-soft);border:1px solid var(--leaf);transform:rotateY(180deg)}
+.face .lbl{margin:0}
+.face.front .lbl{color:var(--coral)}
+.face.back .lbl{color:var(--leaf)}
+.face.front .ft{display:block;font-size:18px;font-weight:700}
+.face.back .ft{display:block;font-family:var(--f-hand);font-size:26px;line-height:1.1;font-weight:700}
+.face small{font-size:12.5px;color:var(--muted)}
+.flip.on .flip-in{transform:rotateY(180deg)}
+
+/* Para ti */
+.calma{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;list-style:none}
+@media (max-width:860px){.calma{grid-template-columns:1fr}}
+.calma li{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;gap:6px;align-content:start}
+.calma .L{font-family:var(--f-display);font-size:40px;font-weight:800;color:var(--cobalt);line-height:1}
+.calma b{font-size:16px}
+.calma span{font-size:14.5px;color:var(--muted)}
+@media (max-width:860px){.calma li{grid-template-columns:44px 1fr;align-items:start}.calma .L{grid-row:1/3;font-size:34px}}
+
+.thermo{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:640px){.thermo{grid-template-columns:1fr}}
+.levels{display:grid;gap:6px}
+.lvl{border:2px solid transparent;border-radius:12px;padding:10px 14px;text-align:left;font-weight:800;font-size:15px;display:flex;align-items:center;gap:10px}
+.lvl i{width:14px;height:14px;border-radius:50%;flex:none}
+.lvl[data-l="rojo"]{background:var(--coral-soft)} .lvl[data-l="rojo"] i{background:var(--coral)}
+.lvl[data-l="naranja"]{background:var(--orange-soft)} .lvl[data-l="naranja"] i{background:var(--orange)}
+.lvl[data-l="amarillo"]{background:var(--sun-soft)} .lvl[data-l="amarillo"] i{background:var(--sun)}
+.lvl[data-l="verde"]{background:var(--leaf-soft)} .lvl[data-l="verde"] i{background:var(--leaf)}
+.lvl[aria-pressed="true"]{border-color:var(--ink)}
+.lvl-detail{display:grid;gap:10px}
+.lvl-detail h4{font-size:22px}
+.lvl-detail .signs{font-size:15px;color:var(--muted)}
+.lvl-detail p{font-size:16.5px}
+
+.breath{display:grid;grid-template-columns:auto minmax(0,1fr);gap:32px;align-items:center}
+@media (max-width:640px){.breath{grid-template-columns:1fr;justify-items:center;text-align:center}}
+.orb-box{width:200px;height:200px;max-width:100%;display:grid;place-items:center;position:relative}
+.orb-box::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px dashed var(--line)}
+.orb{width:200px;height:200px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--sea),var(--cobalt-soft) 60%,var(--sea-deep));transform:scale(.5);transition-property:transform;transition-timing-function:ease-in-out;display:grid;place-items:center;text-align:center}
+.orb.in{transform:scale(1)}
+.orb,.orb-txt{grid-area:1/1}
+.orb-txt{position:relative;font-family:var(--f-hand);font-size:28px;font-weight:700;line-height:1;color:var(--ink);text-align:center;max-width:150px}
+.breath-txt{display:grid;gap:10px;justify-items:start}
+@media (max-width:640px){.breath-txt{justify-items:center}}
+.breath-txt h4{font-size:24px}
+.breath-txt p{color:var(--muted)}
+.rounds{font-variant-numeric:tabular-nums;font-size:14px;font-weight:700;color:var(--cobalt)}
+
+.repair{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.repair{grid-template-columns:1fr}}
+.repair li{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:8px;align-content:start}
+.repair .n{font-family:var(--f-display);font-weight:800;font-size:15px;color:var(--leaf)}
+.repair h4{font-size:20px}
+.repair q{font-family:var(--f-hand);font-size:24px;line-height:1.1;quotes:none}
+
+.tank{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:24px;align-items:center}
+@media (max-width:640px){.tank{grid-template-columns:1fr}}
+.checks{list-style:none;display:grid;gap:8px}
+.checks label{display:flex;gap:10px;align-items:center;font-size:15.5px;cursor:pointer}
+.checks input{width:20px;height:20px;accent-color:var(--leaf);flex:none}
+.gauge{display:grid;gap:8px;text-align:center}
+.gauge-jar{height:160px;width:110px;margin:0 auto;border:3px solid var(--ink);border-top-width:0;border-radius:0 0 22px 22px;position:relative;overflow:hidden;background:var(--surface)}
+.gauge-fill{position:absolute;left:0;right:0;bottom:0;background:var(--leaf);transition:height .5s ease;height:0}
+.gauge b{font-family:var(--f-display);font-size:20px}
+.gauge small{color:var(--muted);font-size:14px}
+
+/* Reto */
+.progress-card{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px;align-items:center}
+@media (max-width:640px){.progress-card{grid-template-columns:1fr}}
+.big-n{font-family:var(--f-display);font-size:56px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;color:var(--cobalt)}
+.big-n small{font-size:22px;color:var(--muted)}
+.bar{height:12px;border-radius:999px;background:var(--cobalt-soft);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--cobalt);border-radius:999px;transition:width .4s}
+.week{display:grid;gap:12px}
+.week h4{font-size:20px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.week h4 small{font-family:var(--f-body);font-size:14px;color:var(--muted);font-weight:600}
+.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:start;cursor:pointer;transition:background .2s,border-color .2s}
+.day .dn{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.day b{font-size:16px;grid-column:1}
+.day .dt{font-size:14.5px;color:var(--muted);grid-column:1}
+.day input{grid-row:1/4;grid-column:2;width:24px;height:24px;accent-color:var(--leaf);margin:2px 0 0}
+.day.done{background:var(--leaf-soft);border-color:var(--leaf)}
+.day.done .dn{color:var(--leaf)}
+.reset-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.linkish{background:none;border:0;padding:0;color:var(--muted);text-decoration:underline;font-size:14px}
+.linkish.warn{color:var(--coral);font-weight:700}
+
+/* Rutinas */
+.rt-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:end;justify-content:space-between}
+.seg{display:inline-flex;background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;border-radius:999px;padding:7px 14px;font-weight:750;font-size:14.5px}
+.seg button[aria-pressed="true"]{background:var(--cobalt);color:var(--on-accent)}
+.rt-board{background:var(--surface);border:2px solid var(--ink);border-radius:22px;padding:24px;display:grid;gap:18px}
+.rt-board h3{font-size:clamp(26px,3.4vw,36px);font-weight:780}
+.rt-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;list-style:none}
+.rt-step{position:relative;border-radius:18px;background:var(--paper);border:2px solid var(--line);padding:16px 12px 14px;display:grid;justify-items:center;gap:8px;text-align:center;min-height:160px;align-content:start}
+.rt-step .num{position:absolute;top:8px;left:10px;font-family:var(--f-display);font-weight:800;font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+.rt-step svg{width:56px;height:56px;color:var(--cobalt)}
+.rt-step b{font-size:16px;line-height:1.25}
+.rt-step.tap{cursor:pointer;width:100%;font:inherit;color:var(--ink)}
+.rt-step.done{background:var(--leaf-soft);border-color:var(--leaf)}
+.rt-step.done svg{color:var(--leaf)}
+.rt-step .ok{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;background:var(--leaf);color:var(--on-accent);display:grid;place-items:center;transform:scale(0);transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.rt-step.done .ok{transform:scale(1)}
+.rt-step .ok svg{width:16px;height:16px;color:var(--on-accent)}
+.rt-ctrl{display:flex;gap:4px;margin-top:4px}
+.rt-ctrl button{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--surface);font-weight:800;font-size:15px;display:grid;place-items:center}
+.rt-ctrl button:disabled{opacity:.35;cursor:default}
+.rt-add{display:grid;gap:10px}
+.rt-add .chips .chip{font-size:14px}
+.cheer{background:var(--sun);color:var(--on-sun);border-radius:var(--r);padding:16px 20px;font-family:var(--f-hand);font-size:30px;font-weight:700;text-align:center}
+
+/* SOS y modal */
+.sos{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;background:var(--coral);color:var(--on-accent);border:0;border-radius:999px;padding:12px 20px 12px 14px;font-weight:800;font-size:15px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow)}
+.sos i{font-style:normal;background:var(--on-accent);color:var(--coral);border-radius:999px;padding:2px 8px;font-size:12.5px;letter-spacing:.08em}
+.modal{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.modal-back{position:absolute;inset:0;background:rgba(10,14,34,.55)}
+.modal-card{position:relative;width:min(640px,100%);max-height:100%;overflow:auto;background:var(--surface);color:var(--ink);border-radius:22px;padding:28px;display:grid;gap:18px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.modal-card h3{font-size:26px;padding-right:40px}
+.x{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--paper);font-size:22px;line-height:1;display:grid;place-items:center}
+.modal-card .why p{font-size:16px}
+.ex{font-family:var(--f-hand);font-size:25px;line-height:1.15;font-weight:600;background:var(--sun-soft);border-radius:var(--r-sm);padding:14px 16px}
+.sos-steps{list-style:none;display:grid;gap:12px;counter-reset:s}
+.sos-steps li{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start}
+.sos-steps .L{width:40px;height:40px;border-radius:12px;background:var(--coral-soft);color:var(--coral);font-family:var(--f-display);font-weight:800;font-size:20px;display:grid;place-items:center}
+.sos-steps b{display:block;font-size:16.5px}
+.sos-steps span{font-size:15px;color:var(--muted)}
+.tabs-mini{display:flex;gap:6px;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);margin-top:20px}
+footer .wrap{padding-block:32px 110px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;font-size:14.5px;color:var(--muted)}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+footer h4{font-size:16px;color:var(--ink);margin-bottom:8px}
+footer ul{list-style:none;display:grid;gap:4px}
+footer i{color:var(--ink)}
+
+/* Marca Kari Moncayo */
+h1,h2,h3,h4{font-weight:600;letter-spacing:0}
+.hero h1{font-weight:500;letter-spacing:-.01em;line-height:1.02;font-size:clamp(42px,6.2vw,72px)}
+.view-head h2{font-weight:500;font-size:clamp(36px,4.8vw,54px);line-height:1.04}
+.block > h3{font-size:clamp(27px,3vw,34px)}
+.eyebrow{letter-spacing:.24em;font-weight:500}
+.lbl{letter-spacing:.18em;font-weight:600}
+.lead{font-weight:400}
+.brand img{width:46px;height:46px;border-radius:50%;flex:none}
+.brand b{font-family:var(--f-body);font-weight:400;font-size:15px;letter-spacing:.32em;text-transform:uppercase}
+.brand small{letter-spacing:.06em;margin-top:2px}
+.brand small em{font-style:normal;color:var(--ink)}
+.top-note{letter-spacing:.24em;text-transform:uppercase;font-size:11.5px}
+.btn{border-radius:2px;text-transform:uppercase;letter-spacing:.16em;font-size:12.5px;font-weight:500;padding:14px 22px}
+.btn.small{padding:10px 16px;font-size:11.5px}
+.btn.ghost{border-width:1px}
+.chip{border-radius:2px;font-weight:500;border-width:1px}
+.rail button span{font-weight:500}
+.rail button[aria-current="page"] span{font-weight:600}
+.note{border-radius:2px;transform:none;border-top:1px solid var(--sun)}
+.note .to{font-size:32px}
+.note .to,.bubble,.style q,.out .say,.face.back .ft,.orb-txt,.repair q,.ex,.cheer,.stairs .you{font-style:italic;font-weight:500}
+.bubble{font-size:24px;border-radius:12px 12px 12px 2px}
+.style q{font-size:25px}
+.repair q{font-size:25px}
+.ex{font-size:25px}
+.face.back .ft{font-size:27px}
+.out .say{font-size:33px}
+.house{border-width:1px}
+.roof{height:40px}
+.route .n,.big-n,.calma .L,.age-tab b{font-weight:500;font-variant-numeric:lining-nums}
+.big-n{font-size:64px}
+.sit-t,.tool .tt{font-weight:600;font-size:22px}
+.age-tab{border-width:1px;border-radius:2px}
+.rt-board{border-width:1px;border-radius:12px}
+.sos{border-radius:2px;text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;font-weight:500}
+.sos i{border-radius:2px;font-weight:600}
+.seg{border-radius:2px;border-width:1px}
+.seg button{border-radius:2px;font-weight:500}
+.author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.author img{width:120px;height:120px;border-radius:50%}
+.author .sig{font-family:var(--f-body);font-size:13px;letter-spacing:.32em;text-transform:uppercase}
+.author .sig small{display:block;color:var(--muted);letter-spacing:.3em;margin-top:6px}
+.author .rule{width:56px;height:1px;background:var(--muted);margin:14px 0}
+@media (max-width:560px){.author{grid-template-columns:1fr;justify-items:center;text-align:center}.author .rule{margin:14px auto}}
+.lockup{display:flex;align-items:center;gap:18px;margin-bottom:14px}
+.lockup img{width:64px;height:64px;border-radius:50%}
+.lockup .bar-v{width:1px;align-self:stretch;background:var(--muted)}
+.lockup b{display:block;font-weight:400;font-size:14px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink)}
+.lockup small{display:block;font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.copy{margin-top:12px;font-size:13px}
+
+/* TDAH */
+.ef{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.ef .fact{gap:10px}
+.ef .see{font-size:15px;color:var(--ink)}
+.ef .see b,.ef .helps b{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;display:block;margin-bottom:2px}
+.ef .see b{color:var(--coral)}
+.ef .helps{font-size:15px;color:var(--ink);border-top:1px solid var(--line);padding-top:10px}
+.ef .helps b{color:var(--leaf)}
+.types{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.types .need p{font-size:15.5px}
+.need.c{background:var(--leaf-soft)}
+td b{font-weight:600}
+.mitos .face.back .ft{font-size:21px;line-height:1.2}
+.mitos .face.front .ft{font-size:17px}
+.aside-note{background:var(--sun-soft);border-radius:var(--r);padding:18px 20px;font-size:15.5px}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  .flip-in{transform:none!important}
+  .flip .face.back{transform:none}
+  .flip .face.back{visibility:hidden}
+  .flip.on .face.back{visibility:visible}
+  .flip.on .face.front{visibility:hidden}
+  .orb{transform:none!important}
+}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <button class="brand" data-go="inicio" aria-label="Crecer con Calma, ir al inicio">
+      <img src="data:image/png;base64,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" alt="Logo de Kari Moncayo, psicóloga">
+      <span><b>Crecer con Calma</b><small>Una guía de <em>Psic. Kari Moncayo</em></small></span>
+    </button>
+    <p class="top-note">Crianza positiva · 3 a 8 años</p>
+  </div>
+</header>
+
+<div class="wrap shell">
+  <nav class="rail" id="rail" aria-label="Módulos de la guía">
+    <button data-go="inicio"><span>Inicio</span><small>Qué es y cómo usarla</small></button>
+    <button data-go="cerebro"><span>Su cerebro</span><small>Qué pasa por dentro</small></button>
+    <button data-go="edades"><span>Por edades</span><small>3–4 · 5–6 · 7–8 años</small></button>
+    <button data-go="tdah"><span>TDAH</span><small>Entenderlo y acompañarlo</small></button>
+    <button data-go="situaciones"><span>Situaciones</span><small>15 retos del día a día</small></button>
+    <button data-go="herramientas"><span>Herramientas</span><small>14 técnicas prácticas</small></button>
+    <button data-go="frases"><span>Frases</span><small>Qué decir en vez de…</small></button>
+    <button data-go="parati"><span>Para ti</span><small>Tu propia calma</small></button>
+    <button data-go="reto"><span>Reto 21 días</span><small>Practica paso a paso</small></button>
+    <button data-go="rutinas"><span>Rutinas</span><small>Tabla para tu hijo</small></button>
+    <div class="rail-progress" aria-live="polite"><span id="railProg">Reto: 0 de 21 días</span><div class="bar"><i id="railBar"></i></div></div>
+  </nav>
+
+  <main id="main">
+
+    <!-- INICIO -->
+    <section class="view" data-view="inicio">
+      <div class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">Psic. Kari Moncayo · Crianza positiva · 3 a 8 años</p>
+          <h1>Detrás de cada berrinche hay un cerebro <span class="mk">aprendiendo</span>.</h1>
+          <p class="lead">Aquí vas a entender qué pasa dentro de tu hijo cuando grita, pega o no te hace caso, y vas a tener herramientas concretas para acompañarlo con cariño y con límites claros. Sin gritos, sin castigos y sin culpa.</p>
+          <div class="cta-row">
+            <button class="btn primary" data-go="cerebro">Entender su cerebro</button>
+            <button class="btn ghost" data-go="situaciones">Tengo un problema ahora</button>
+          </div>
+        </div>
+        <aside class="note" aria-live="polite">
+          <p class="lbl">Frase del día</p>
+          <p class="from" id="fdFrom"></p>
+          <p class="to" id="fdTo"></p>
+          <div class="row"><small>Cambia cada día</small><button class="btn small soft" id="fdNext">Otra frase</button></div>
+        </aside>
+      </div>
+
+      <div class="block">
+        <h3>¿Qué es la crianza positiva?</h3>
+        <div class="two">
+          <div class="prose">
+            <p>Es una forma de educar basada en el respeto mutuo. Combina <b>amabilidad y firmeza al mismo tiempo</b>: respeta lo que tu hijo siente y, a la vez, sostiene los límites que necesita para estar seguro y aprender.</p>
+            <p>No es dejarlo hacer lo que quiera. Sí hay reglas, sí hay “no”. La diferencia está en <b>cómo</b> se ponen: sin miedo, sin humillación y enseñando habilidades que le servirán toda la vida, como calmarse, resolver problemas y hacerse responsable.</p>
+            <p>El objetivo no es un niño que obedece hoy por miedo. Es un niño que mañana sabrá decidir bien aunque tú no estés mirando.</p>
+          </div>
+          <ul class="principles" id="principles"></ul>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Los cuatro estilos de crianza</h3>
+        <p class="sub">La investigación de la psicóloga Diana Baumrind describe estilos según cuánta firmeza y cuánta calidez hay en la relación. La crianza positiva vive en la esquina donde están las dos.</p>
+        <div class="styles">
+          <div class="ax-y">Más firmeza ↑</div>
+          <div class="style"><h4>Autoritario</h4><q>“Porque lo digo yo.”</q><p>Mucha firmeza, poca calidez. Aprende a obedecer por miedo, a esconder lo que hace o a rebelarse.</p></div>
+          <div class="style best"><h4>Crianza positiva</h4><q>“Te entiendo, y la respuesta es no.”</q><p>Firmeza y calidez juntas. Aprende que sus emociones importan y que los límites también.</p></div>
+          <div class="style"><h4>Ausente</h4><q>“…”</q><p>Ni firmeza ni calidez. Aprende que está solo con lo que siente.</p></div>
+          <div class="style"><h4>Permisivo</h4><q>“Bueno, está bien, como quieras.”</q><p>Mucha calidez, poca firmeza. Aprende que las reglas se doblan si insiste, y le cuesta tolerar la frustración.</p></div>
+          <div class="ax-x">Más calidez →</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Ruta sugerida</h3>
+        <p class="sub">Puedes entrar a cualquier módulo cuando lo necesites. Si es tu primera vez, este orden ayuda.</p>
+        <ol class="route">
+          <li><button data-go="cerebro"><span class="n">1</span><b>Entiende su cerebro</b><span>Por qué no puede “calmarse” solo y qué necesita de ti.</span></button></li>
+          <li><button data-go="edades"><span class="n">2</span><b>Conoce su etapa</b><span>Qué es normal a su edad y qué esperar. Si te preocupa la atención, revisa también TDAH.</span></button></li>
+          <li><button data-go="herramientas"><span class="n">3</span><b>Elige herramientas</b><span>Técnicas para conectar, poner límites y enseñar.</span></button></li>
+          <li><button data-go="parati"><span class="n">4</span><b>Cuida tu calma</b><span>Tu regulación es su mejor herramienta.</span></button></li>
+          <li><button data-go="reto"><span class="n">5</span><b>Practica 21 días</b><span>Un pequeño reto diario para crear hábitos.</span></button></li>
+        </ol>
+      </div>
+
+      <div class="author">
+        <img src="data:image/png;base64,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" alt="Logo de Kari Moncayo, psicóloga">
+        <div>
+          <p class="sig">Kari Moncayo<small>Psicóloga</small></p>
+          <div class="rule"></div>
+          <p>Creé esta guía para acompañarte en el día a día con tu hijo: para que entiendas lo que pasa dentro de él y tengas herramientas concretas para criar con calma, respeto y límites claros. No buscamos papás perfectos, buscamos papás presentes que saben reparar.</p>
+          <p style="margin-top:10px"><b>Psic. Kari Moncayo</b></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CEREBRO -->
+    <section class="view" data-view="cerebro" hidden>
+      <div class="view-head">
+        <p class="eyebrow">Su cerebro</p>
+        <h2>Lo que pasa dentro de tu hijo</h2>
+        <p class="lead">Cuando entiendes cómo funciona su cerebro, muchas conductas dejan de parecer “mala conducta” y empiezan a verse como lo que son: un cerebro que todavía está en construcción.</p>
+      </div>
+
+      <div class="block">
+        <h3>Una casa de dos pisos</h3>
+        <div class="house-wrap">
+          <div>
+            <div class="roof" aria-hidden="true"></div>
+            <div class="house" id="house" data-state="calma">
+              <div class="floor up">
+                <h4>Piso de arriba <span class="tag tape">En obra hasta los ~25 años</span></h4>
+                <p>Pensar antes de actuar · Planear · Frenar impulsos · Ponerse en el lugar del otro · Resolver problemas</p>
+              </div>
+              <div class="stairs">
+                <svg viewBox="0 0 84 42" aria-hidden="true"><path d="M4 38H20V29H36V20H52V11H68V4H80" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+                <span id="stairsTxt">Escalera abierta</span>
+                <span class="you">+ tu calma</span>
+              </div>
+              <div class="floor down">
+                <h4>Piso de abajo <span class="tag ready">Listo desde que nace</span></h4>
+                <p>Emociones fuertes · Alarma de peligro · Pelear, huir o paralizarse · Hambre, sueño, cansancio</p>
+              </div>
+            </div>
+            <div class="states" role="tablist" aria-label="Estados del cerebro">
+              <button role="tab" data-state="calma" aria-selected="true">En calma</button>
+              <button role="tab" data-state="tormenta" aria-selected="false">Se desborda</button>
+              <button role="tab" data-state="prestas" aria-selected="false">Le prestas tu calma</button>
+            </div>
+          </div>
+          <div class="explain" id="houseExplain" aria-live="polite"></div>
+        </div>
+        <p class="credit">Metáfora basada en el trabajo de Daniel J. Siegel y Tina Payne Bryson, autores de “El cerebro del niño”.</p>
+      </div>
+
+      <div class="block">
+        <h3>Seis cosas que conviene saber</h3>
+        <div class="facts" id="facts"></div>
+      </div>
+
+      <div class="block">
+        <h3>El iceberg de la conducta</h3>
+        <p class="sub">Lo que ves es solo la punta. Debajo hay una necesidad o una habilidad que todavía no tiene. Elige una conducta para ver qué puede haber detrás.</p>
+        <div class="ice">
+          <div class="ice-top">
+            <p class="lbl">Lo que ves</p>
+            <div class="chips" id="iceChips"></div>
+            <div class="berg-tip" id="bergTip"></div>
+          </div>
+          <div class="sea">
+            <p class="water">Lo que no se ve</p>
+            <div class="berg-body"><p class="lbl">Puede estar pasando que…</p><ul id="bergList"></ul></div>
+          </div>
+          <p class="ice-note">Antes de corregir, pregúntate: <b>¿qué necesita mi hijo ahora y qué habilidad le falta?</b> Responder a eso cambia la conducta más que cualquier castigo.</p>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Las dos necesidades de todo niño</h3>
+        <p class="sub">La psicología de Alfred Adler, base de la Disciplina Positiva, dice que cada niño busca dos cosas. Cuando no las encuentra, aparece la conducta difícil. Como decía Rudolf Dreikurs, un niño que se porta mal es un niño desanimado.</p>
+        <div class="needs">
+          <div class="need a"><h4>Pertenencia</h4><p>Sentir que es parte de la familia y que lo quieren tal como es, también en sus peores momentos.</p><p><b>Se llena con:</b> tiempo especial, abrazos, escucha, rituales familiares.</p></div>
+          <div class="need b"><h4>Importancia</h4><p>Sentir que es capaz, que aporta y que su opinión cuenta.</p><p><b>Se llena con:</b> responsabilidades reales, opciones, pedirle ideas, confiar en él.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDADES -->
+    <section class="view" data-view="edades" hidden>
+      <div class="view-head">
+        <p class="eyebrow">Por edades</p>
+        <h2>Qué esperar en cada etapa</h2>
+        <p class="lead">Cada niño tiene su ritmo. Estas son tendencias generales que te ayudan a ajustar tus expectativas y a no tomar como personal lo que es parte del desarrollo.</p>
+      </div>
+      <div class="ages-tabs" role="tablist" aria-label="Elige una edad" id="ageTabs"></div>
+      <div class="age-panel" id="agePanel" aria-live="polite"></div>
+    </section>
+
+    <!-- TDAH -->
+    <section class="view" data-view="tdah" hidden>
+      <div class="view-head">
+        <p class="eyebrow">TDAH · 3 a 8 años</p>
+        <h2>Cuando su cerebro va a otro ritmo</h2>
+        <p class="lead">El Trastorno por Déficit de Atención e Hiperactividad (TDAH) es una condición del neurodesarrollo. No es flojera, no es falta de educación y no es culpa de los papás. Su cerebro regula la atención, el movimiento y los impulsos de una forma distinta, y con el acompañamiento correcto puede desarrollarse plenamente.</p>
+      </div>
+
+      <p class="aside-note"><b>Importante:</b> el diagnóstico de TDAH solo lo puede hacer un médico especialista: paidopsiquiatra o neuropediatra. El psicólogo infantil no diagnostica TDAH, pero sí acompaña con evaluaciones complementarias, terapia y orientación a padres. Esta sección te ayuda a entenderlo, a saber qué observar y a acompañar a tu hijo en casa, tenga o no un diagnóstico.</p>
+
+      <div class="block">
+        <h3>¿Qué es el TDAH?</h3>
+        <div class="two">
+          <div class="prose">
+            <p>Se estima que alrededor de 5 de cada 100 niños en el mundo tienen TDAH. Tiene un componente hereditario importante: es frecuente que algún familiar cercano también lo tenga, aunque nunca lo haya sabido.</p>
+            <p>Para hablar de TDAH, las dificultades tienen que aparecer <b>en más de un lugar</b> (por ejemplo, en casa y en la escuela), <b>durar al menos seis meses</b>, <b>ser más intensas que en otros niños de su edad</b> y <b>afectar su vida diaria</b>: su aprendizaje, sus amistades o la convivencia familiar.</p>
+            <p>En los niños de 3 a 4 años es difícil distinguir el TDAH de la inquietud normal de la edad. Por eso los especialistas suelen ser muy cuidadosos antes de dar un diagnóstico a estas edades.</p>
+          </div>
+          <div class="types">
+            <div class="need a"><h4>Predominio inatento</h4><p>Se distrae con facilidad, parece no escuchar, pierde cosas, olvida instrucciones y le cuesta terminar lo que empieza. Suele pasar desapercibido, sobre todo en las niñas.</p></div>
+            <div class="need b"><h4>Predominio hiperactivo e impulsivo</h4><p>Se mueve todo el tiempo, habla mucho, interrumpe, le cuesta esperar su turno y actúa antes de pensar.</p></div>
+            <div class="need c"><h4>Combinado</h4><p>Tiene características de los dos tipos. Es la presentación más común.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Lo que pasa en su cerebro</h3>
+        <p class="sub">¿Recuerdas el piso de arriba de la casa? En los niños con TDAH, las <b>funciones ejecutivas</b>, que funcionan como el director de orquesta del cerebro, maduran a otro ritmo. Algunos estudios muestran que ciertas zonas del cerebro tardan unos años más en madurar. Por eso necesitan más apoyo externo durante más tiempo.</p>
+        <div class="ef">
+          <div class="fact"><h4>Atención</h4><p class="see"><b>Lo que ves</b>Se distrae con cualquier ruido o pensamiento y le cuesta sostener la atención en lo que no le interesa.</p><p class="helps"><b>Qué le ayuda</b>Tareas cortas, un lugar sin distracciones y tu acompañamiento cerca.</p></div>
+          <div class="fact"><h4>Memoria de trabajo</h4><p class="see"><b>Lo que ves</b>Le pides tres cosas y solo hace una. Olvida a qué iba a su cuarto.</p><p class="helps"><b>Qué le ayuda</b>Una instrucción a la vez y pedirle que te la repita.</p></div>
+          <div class="fact"><h4>Control de impulsos</h4><p class="see"><b>Lo que ves</b>Interrumpe, toca todo, responde antes de que termines la pregunta.</p><p class="helps"><b>Qué le ayuda</b>Recordatorios antes de la situación y practicar la espera en juegos.</p></div>
+          <div class="fact"><h4>Regulación emocional</h4><p class="see"><b>Lo que ves</b>Se frustra rápido y sus reacciones son muy intensas.</p><p class="helps"><b>Qué le ayuda</b>Tu calma prestada, nombrar emociones y un rincón de la calma.</p></div>
+          <div class="fact"><h4>Noción del tiempo</h4><p class="see"><b>Lo que ves</b>“Cinco minutos” no significa nada para él. Siempre llega tarde o se le hace tarde.</p><p class="helps"><b>Qué le ayuda</b>Relojes visuales y temporizadores que pueda ver.</p></div>
+          <div class="fact"><h4>Organización</h4><p class="see"><b>Lo que ves</b>No sabe por dónde empezar una tarea ni cómo ordenar sus cosas.</p><p class="helps"><b>Qué le ayuda</b>Dividir en pasos, listas con dibujos y un lugar fijo para cada cosa.</p></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>¿Es normal para su edad o puede ser TDAH?</h3>
+        <p class="sub">Todos los niños pequeños son inquietos y se distraen. La diferencia está en la intensidad, la frecuencia y en cuánto afecta su vida.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Edad</th><th>Esperable a esta edad</th><th>Señales para consultar</th></tr></thead>
+            <tbody>
+              <tr><td><b>3–4 años</b></td><td>Se mueve mucho, cambia de juego seguido, su atención dura pocos minutos y le cuesta esperar.</td><td class="bad">Actividad extrema en todos los lugares, se pone en peligro con frecuencia por impulsivo (corre a la calle, se avienta de alturas), no logra sentarse ni para un cuento corto que le gusta, problemas constantes en la guardería.</td></tr>
+              <tr><td><b>5–6 años</b></td><td>Se distrae con ruidos, olvida alguna instrucción y le cuesta quedarse quieto mucho rato.</td><td class="bad">No termina actividades breves aunque le interesen, interrumpe todo el tiempo, conflictos frecuentes con compañeros por impulsividad, la maestra describe lo mismo que tú ves en casa.</td></tr>
+              <tr><td><b>7–8 años</b></td><td>A veces olvida la tarea, prefiere jugar y se distrae cuando algo le aburre.</td><td class="bad">Pierde cosas a diario, una tarea de 20 minutos le toma horas, errores por descuido constantes, dificultad marcada para organizarse comparado con su grupo, empieza a decir que es “tonto” o “malo”.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="aside-note">Otras causas pueden parecerse al TDAH: falta de sueño, problemas de vista u oído, ansiedad, cambios fuertes en la familia, dificultades de aprendizaje o exceso de pantallas. Por eso la evaluación profesional es tan importante.</p>
+      </div>
+
+      <div class="block">
+        <h3>Herramientas para casa</h3>
+        <p class="sub">Todo lo que viste en la caja de herramientas sirve, y es todavía más importante para un niño con TDAH. Estas son las que más ayudan.</p>
+        <div class="facts">
+          <div class="fact"><h4>Instrucciones cortas y de cerca</h4><p>Acércate, míralo a los ojos, di una sola instrucción y pídele que la repita. Gritar desde lejos no funciona.</p></div>
+          <div class="fact"><h4>Hazlo visible</h4><p>Tablas de rutina, listas con dibujos y temporizadores. Su cerebro necesita ver lo que sigue, no solo escucharlo.</p></div>
+          <div class="fact"><h4>Bloques cortos con pausas</h4><p>Divide la tarea en bloques de 10 a 15 minutos con pausas de movimiento: saltar, ir por agua, estirarse.</p></div>
+          <div class="fact"><h4>Permite el movimiento</h4><p>Hacer la tarea de pie, sentarse en una pelota o apretar algo en la mano le ayuda a concentrarse, no lo distrae.</p></div>
+          <div class="fact"><h4>Reconoce al momento</h4><p>Su cerebro responde mejor a reconocimientos inmediatos y frecuentes. “Te quedaste sentado toda la comida, gracias.”</p></div>
+          <div class="fact"><h4>Anticipa los cambios</h4><p>Avisa cinco minutos antes y luego dos minutos antes. Las transiciones son de los momentos más difíciles.</p></div>
+          <div class="fact"><h4>Cuida lo básico</h4><p>Sueño suficiente, actividad física diaria al aire libre y pocas pantallas. Estos tres hábitos influyen mucho en sus síntomas.</p></div>
+          <div class="fact"><h4>Cuida su autoestima</h4><p>Escucha muchas más correcciones que otros niños. Procura decirle varias cosas positivas por cada corrección y descubre juntos sus fortalezas.</p></div>
+          <div class="fact"><h4>Trabaja en equipo con la escuela</h4><p>Habla con su maestra, comparte lo que funciona en casa y acuerden estrategias: sentarlo cerca, darle tareas que impliquen moverse.</p></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Qué decir y qué evitar</h3>
+        <div class="two">
+          <div class="card stack"><p class="lbl">Prueba decir</p><div class="bubbles">
+            <p class="bubble">Tu cerebro es rápido y creativo. Vamos a encontrar trucos para que te ayude.</p>
+            <p class="bubble">Sé que te esforzaste. ¿Qué truco nos sirve para la próxima vez?</p>
+            <p class="bubble">Ponemos el temporizador y lo hacemos juntos.</p>
+            <p class="bubble">No eres malo. Te cuesta esperar, y eso se puede practicar.</p>
+          </div></div>
+          <div class="avoid stack" style="align-content:start"><p class="lbl">Evita</p><ul>
+            <li><span>“Si quisieras, podrías.” Muchas veces quiere, pero su cerebro todavía no puede.</span></li>
+            <li><span>Etiquetas como “flojo”, “distraído” o “insoportable”</span></li>
+            <li><span>Compararlo con sus hermanos o compañeros</span></li>
+            <li><span>Castigarlo por síntomas, como olvidar cosas</span></li>
+            <li><span>Quitarle el recreo o el deporte como castigo: necesita moverse</span></li>
+            <li><span>Sermones largos: se pierde a la mitad</span></li>
+          </ul></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Mitos y realidades</h3>
+        <p class="sub">Toca cada tarjeta para ver la realidad.</p>
+        <div class="phrases mitos" id="mitos">
+          <button class="flip" aria-pressed="false"><span class="flip-in"><span class="face front"><span class="lbl">Mito</span><span class="ft">Es falta de disciplina en casa.</span><small>Toca para ver la realidad</small></span><span class="face back"><span class="lbl">Realidad</span><span class="ft">Es una condición del neurodesarrollo con base biológica. La crianza no lo causa, pero sí ayuda mucho a manejarlo.</span><small>Toca para regresar</small></span></span></button>
+          <button class="flip" aria-pressed="false"><span class="flip-in"><span class="face front"><span class="lbl">Mito</span><span class="ft">Si puede pasar horas en videojuegos, no tiene TDAH.</span><small>Toca para ver la realidad</small></span><span class="face back"><span class="lbl">Realidad</span><span class="ft">Lo muy estimulante sí atrapa su atención. Su reto es concentrarse en lo que no le interesa.</span><small>Toca para regresar</small></span></span></button>
+          <button class="flip" aria-pressed="false"><span class="flip-in"><span class="face front"><span class="lbl">Mito</span><span class="ft">Se quita solo al crecer.</span><small>Toca para ver la realidad</small></span><span class="face back"><span class="lbl">Realidad</span><span class="ft">Muchos aprenden a manejarlo y los síntomas cambian, pero en muchos casos continúa en la adolescencia y la adultez.</span><small>Toca para regresar</small></span></span></button>
+          <button class="flip" aria-pressed="false"><span class="flip-in"><span class="face front"><span class="lbl">Mito</span><span class="ft">Solo lo tienen los niños varones.</span><small>Toca para ver la realidad</small></span><span class="face back"><span class="lbl">Realidad</span><span class="ft">Las niñas también lo tienen, a menudo con la presentación inatenta, que es más silenciosa y se detecta tarde.</span><small>Toca para regresar</small></span></span></button>
+          <button class="flip" aria-pressed="false"><span class="flip-in"><span class="face front"><span class="lbl">Mito</span><span class="ft">El azúcar provoca el TDAH.</span><small>Toca para ver la realidad</small></span><span class="face back"><span class="lbl">Realidad</span><span class="ft">La investigación no ha encontrado que el azúcar cause TDAH. Una alimentación equilibrada sí ayuda a su bienestar general.</span><small>Toca para regresar</small></span></span></button>
+          <button class="flip" aria-pressed="false"><span class="flip-in"><span class="face front"><span class="lbl">Mito</span><span class="ft">El único tratamiento es el medicamento.</span><small>Toca para ver la realidad</small></span><span class="face back"><span class="lbl">Realidad</span><span class="ft">El tratamiento lo define el especialista y suele combinar orientación a padres, apoyo escolar, terapia y, en algunos casos, medicamento.</span><small>Toca para regresar</small></span></span></button>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>¿Qué hacer si sospechas que tiene TDAH?</h3>
+        <div class="two">
+          <div class="card"><ol class="steps">
+            <li><span><b>Observa y anota.</b> Durante unas semanas, escribe qué pasa, cuándo, dónde y qué ayuda.</span></li>
+            <li><span><b>Habla con su maestra.</b> Pregunta si ve lo mismo en la escuela.</span></li>
+            <li><span><b>Consulta a su pediatra.</b> Puede descartar otras causas, como problemas de sueño, vista u oído.</span></li>
+            <li><span><b>Agenda una valoración con paidopsiquiatra o neuropediatra</b>, que son quienes pueden diagnosticar TDAH. El psicólogo infantil puede apoyar con evaluaciones complementarias, terapia y orientación para ti.</span></li>
+            <li><span><b>Arma un plan integral</b> con el especialista: orientación para ti, apoyo en la escuela y el tratamiento que él indique.</span></li>
+          </ol></div>
+          <div class="stack">
+            <div class="why"><p class="lbl">Buena noticia</p><p>Para los niños de 4 a 5 años, la Academia Americana de Pediatría recomienda empezar con <b>entrenamiento para padres en manejo de la conducta</b>. Muchas de las herramientas de esta guía (rutinas, reconocimiento, límites claros y amables, corregulación) son parte de ese trabajo.</p></div>
+            <div class="expect"><p class="lbl">Para ti</p><p>Acompañar a un hijo con TDAH cansa. No estás haciendo algo mal. Cuida tu tanque, busca una red de apoyo y recuerda: tu hijo no te está haciendo la vida difícil, la está teniendo difícil.</p></div>
+            <div class="cta-row"><button class="btn small primary" data-go="rutinas">Armar su rutina visual</button><button class="btn small ghost" data-go="parati">Cuidar mi calma</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SITUACIONES -->
+    <section class="view" data-view="situaciones" hidden>
+      <div class="view-head">
+        <p class="eyebrow">Situaciones</p>
+        <h2>¿Qué hago cuando…?</h2>
+        <p class="lead">Los retos más comunes del día a día, explicados en cuatro partes: qué está pasando en tu hijo, qué decir, qué hacer y qué evitar.</p>
+      </div>
+      <div class="toolbar">
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="sitSearch" type="search" placeholder="Busca: dormir, pegar, pantallas…" aria-label="Buscar situación">
+        </div>
+        <div class="chips" id="sitAges" role="group" aria-label="Filtrar por edad"></div>
+      </div>
+      <p class="count" id="sitCount" aria-live="polite"></p>
+      <div class="sits" id="sits"></div>
+    </section>
+
+    <!-- HERRAMIENTAS -->
+    <section class="view" data-view="herramientas" hidden>
+      <div class="view-head">
+        <p class="eyebrow">Herramientas</p>
+        <h2>Tu caja de herramientas</h2>
+        <p class="lead">Técnicas concretas para conectar, poner límites y enseñar habilidades. Toca cualquiera para ver por qué funciona, cómo aplicarla paso a paso y un ejemplo real.</p>
+      </div>
+      <div class="block">
+        <div class="chips" id="toolTags" role="group" aria-label="Filtrar herramientas"></div>
+        <div class="tools" id="tools"></div>
+      </div>
+
+      <div class="block" id="limite">
+        <h3>Arma tu límite amable y firme</h3>
+        <p class="sub">Escribe la situación y la guía arma la frase. Valida lo que siente, di el límite con claridad y ofrece lo que sí puede hacer.</p>
+        <div class="builder">
+          <div class="fields">
+            <div class="field"><label for="limPreset">Cargar un ejemplo</label>
+              <select id="limPreset">
+                <option value="parque">Salir del parque</option>
+                <option value="pantalla">Apagar la tablet</option>
+                <option value="dulce">Pedir otro dulce</option>
+                <option value="hermano">Pegarle al hermano</option>
+                <option value="dormir">No querer dormir</option>
+              </select>
+            </div>
+            <div class="field"><label for="limA">1. Lo que siente o quiere</label><input id="limA" type="text"></div>
+            <div class="field"><label for="limB">2. El límite</label><input id="limB" type="text"></div>
+            <div class="field"><label for="limC">3. Lo que sí puede hacer</label><input id="limC" type="text"></div>
+          </div>
+          <div class="out">
+            <p class="lbl">Tu frase</p>
+            <p class="say" id="limOut"></p>
+            <div class="parts"><span>Valida</span><span>Pone el límite</span><span>Ofrece opción</span></div>
+            <div><button class="btn small primary" id="limCopy">Copiar frase</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block" id="consecuencias">
+        <h3>Castigo o consecuencia lógica</h3>
+        <p class="sub">El castigo busca que el niño pague. La consecuencia lógica busca que aprenda a reparar. Para que sea lógica y no un castigo disfrazado, revisa que cumpla con estas cuatro condiciones.</p>
+        <div class="rs"><span><b>Relacionada</b> con lo que pasó</span><span><b>Respetuosa</b>, sin humillar</span><span><b>Razonable</b> para su edad</span><span><b>Avisada</b> antes, cuando se pueda</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Situación</th><th>Castigo</th><th>Consecuencia lógica o natural</th><th>Lo que aprende</th></tr></thead>
+            <tbody>
+              <tr><td>Rayó la pared</td><td class="bad">“Una semana sin tele.”</td><td class="good">Limpian juntos la pared.</td><td>Mis errores se reparan.</td></tr>
+              <tr><td>No recoge los juguetes</td><td class="bad">“Voy a tirar todos tus juguetes.”</td><td class="good">Los juguetes que no se recogen descansan en una caja hasta mañana.</td><td>Cuidar mis cosas es mi responsabilidad.</td></tr>
+              <tr><td>Avienta la comida</td><td class="bad">“Castigado en tu cuarto.”</td><td class="good">“Veo que ya terminaste. Ayúdame a limpiar.”</td><td>La comida es para comer.</td></tr>
+              <tr><td>No quiere ponerse el suéter</td><td class="bad">Gritarle y forzarlo.</td><td class="good">Siente un poco de frío; llevas el suéter por si lo pide.</td><td>Mi cuerpo me da información.</td></tr>
+              <tr><td>Le pega a un amigo en el parque</td><td class="bad">Una nalgada.</td><td class="good">“Hoy nos vamos del parque. Mañana lo intentamos de nuevo.”</td><td>Pegar tiene un efecto; puedo intentarlo otra vez.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRASES -->
+    <section class="view" data-view="frases" hidden>
+      <div class="view-head">
+        <p class="eyebrow">Frases</p>
+        <h2>En vez de esto, prueba esto</h2>
+        <p class="lead">Las palabras que usamos con nuestros hijos se convierten en su voz interior. Toca cada tarjeta para ver una alternativa respetuosa.</p>
+      </div>
+      <div class="block">
+        <div class="cta-row"><button class="btn small soft" id="flipAll">Voltear todas</button></div>
+        <div class="phrases" id="phrases"></div>
+      </div>
+    </section>
+
+    <!-- PARA TI -->
+    <section class="view" data-view="parati" hidden>
+      <div class="view-head">
+        <p class="eyebrow">Para ti</p>
+        <h2>Tu calma es su escalera</h2>
+        <p class="lead">Tu hijo aprende a regularse a través de ti. Por eso cuidar tu propia calma no es un lujo: es la herramienta más poderosa de esta guía. Y no se trata de ser perfecto, sino de saber reparar.</p>
+      </div>
+
+      <div class="block">
+        <h3>Pausa C.A.L.M.A.</h3>
+        <p class="sub">Cuando sientas que vas a explotar, recorre estas cinco letras. Con práctica se vuelve automático.</p>
+        <ol class="calma">
+          <li><span class="L">C</span><b>Calla un momento</b><span>No digas nada durante cinco segundos.</span></li>
+          <li><span class="L">A</span><b>Aléjate un paso</b><span>Si tu hijo está seguro: “Necesito un momento. Vuelvo enseguida.”</span></li>
+          <li><span class="L">L</span><b>Llena tus pulmones</b><span>Inhala por la nariz y exhala más largo, tres veces.</span></li>
+          <li><span class="L">M</span><b>Mira detrás</b><span>¿Qué necesita tu hijo? ¿Y qué necesitas tú?</span></li>
+          <li><span class="L">A</span><b>Actúa con calma</b><span>Vuelve con voz baja y una sola frase.</span></li>
+        </ol>
+      </div>
+
+      <div class="block">
+        <h3>Tu termómetro del enojo</h3>
+        <p class="sub">Reconocer en qué nivel estás te permite actuar antes de llegar al rojo. Elige un nivel.</p>
+        <div class="thermo card">
+          <div class="levels" id="levels">
+            <button class="lvl" data-l="rojo" aria-pressed="false"><i></i>Ya exploté</button>
+            <button class="lvl" data-l="naranja" aria-pressed="false"><i></i>Estoy por explotar</button>
+            <button class="lvl" data-l="amarillo" aria-pressed="true"><i></i>Me estoy irritando</button>
+            <button class="lvl" data-l="verde" aria-pressed="false"><i></i>Estoy tranquilo</button>
+          </div>
+          <div class="lvl-detail" id="lvlDetail" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <div class="block" id="respira">
+        <h3>Respiren juntos</h3>
+        <div class="breath card">
+          <div class="orb-box"><div class="orb" id="orb"></div><span class="orb-txt" id="orbTxt">Lista</span></div>
+          <div class="breath-txt">
+            <h4>La flor y la vela</h4>
+            <p>Una respiración que sirve para ti y para tu hijo. Imaginen que huelen una flor (inhalan por la nariz) y luego soplan una vela despacito (exhalan por la boca). La exhalación larga le avisa al cuerpo que está a salvo.</p>
+            <p class="rounds" id="rounds">5 respiraciones · 50 segundos</p>
+            <button class="btn primary" id="breathBtn">Empezar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Si ya gritaste</h3>
+        <p class="sub">Pasa en todas las familias. Lo que fortalece el vínculo es volver y reparar. Las tres R de la reparación, de Jane Nelsen:</p>
+        <ol class="repair">
+          <li><span class="n">Paso 1</span><h4>Reconoce</h4><q>“Me equivoqué cuando te grité.”</q></li>
+          <li><span class="n">Paso 2</span><h4>Reconcilia</h4><q>“Lo siento. No te lo merecías.”</q></li>
+          <li><span class="n">Paso 3</span><h4>Resuelve</h4><q>“¿Cómo lo arreglamos? La próxima vez voy a respirar antes de hablar.”</q></li>
+        </ol>
+      </div>
+
+      <div class="block">
+        <h3>¿Cómo está tu tanque hoy?</h3>
+        <p class="sub">Un adulto agotado tiene menos paciencia. Esto no es egoísmo: es parte de criar con calma.</p>
+        <div class="tank card">
+          <ul class="checks" id="tankChecks"></ul>
+          <div class="gauge"><div class="gauge-jar"><div class="gauge-fill" id="gaugeFill"></div></div><b id="gaugeTxt">0 de 6</b><small id="gaugeMsg"></small></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Cuándo pedir ayuda profesional</h3>
+        <div class="two">
+          <div class="card stack"><p class="lbl">Para tu hijo</p><ul class="list alert" id="helpKid"></ul></div>
+          <div class="card stack"><p class="lbl">Para ti</p><ul class="list alert" id="helpMe"></ul></div>
+        </div>
+        <p class="sub" style="margin-top:0">Pedir ayuda a un pediatra, psicólogo infantil o terapeuta familiar es una decisión valiente y amorosa.</p>
+      </div>
+    </section>
+
+    <!-- RETO -->
+    <section class="view" data-view="reto" hidden>
+      <div class="view-head">
+        <p class="eyebrow">Reto 21 días</p>
+        <h2>Un pequeño paso cada día</h2>
+        <p class="lead">Los cambios grandes se construyen con acciones pequeñas y repetidas. Haz un reto al día y márcalo cuando lo logres. Tu avance se guarda en este navegador.</p>
+      </div>
+      <div class="card progress-card">
+        <p class="big-n" id="retoN">0<small> / 21</small></p>
+        <div class="stack" style="gap:8px"><b id="retoMsg">Empieza hoy con el día 1.</b><div class="bar"><i id="retoBar"></i></div></div>
+        <div class="reset-row"><button class="linkish" id="retoReset">Reiniciar reto</button></div>
+      </div>
+      <div id="weeks" class="stack" style="gap:36px"></div>
+    </section>
+
+    <!-- RUTINAS -->
+    <section class="view" data-view="rutinas" hidden>
+      <div class="view-head">
+        <p class="eyebrow">Rutinas</p>
+        <h2>La tabla de rutinas de tu hijo</h2>
+        <p class="lead">Arma su rutina con él y úsala en esta pantalla: tu hijo toca cada paso cuando lo termina. Así la tabla da la indicación y tú dejas de repetir.</p>
+      </div>
+      <div class="rt-bar">
+        <div class="field" style="flex:1 1 200px;max-width:280px"><label for="rtName">Nombre de tu hijo (opcional)</label><input id="rtName" type="text" placeholder="Por ejemplo, Mateo"></div>
+        <div class="seg" role="group" aria-label="Momento del día" id="rtTipo">
+          <button data-t="manana">Mañana</button><button data-t="tarde">Tarde</button><button data-t="noche">Noche</button>
+        </div>
+        <div class="seg" role="group" aria-label="Modo" id="rtModo">
+          <button data-m="nino">Modo niño</button><button data-m="editar">Editar</button>
+        </div>
+      </div>
+      <div class="rt-board">
+        <h3 id="rtTitle">Mi mañana</h3>
+        <ol class="rt-steps" id="rtSteps"></ol>
+        <div id="rtFoot"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="lockup"><img src="data:image/png;base64,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" alt="Logo de Kari Moncayo, psicóloga"><span class="bar-v"></span><span><b>Kari Moncayo</b><small>Psicóloga</small></span></div>
+      <p><b style="color:var(--ink)">Crecer con Calma</b> es un producto de la Psic. Kari Moncayo. Esta guía es educativa y no sustituye la orientación de un pediatra, psicólogo o profesional de la salud. Si algo te preocupa del desarrollo o el bienestar de tu hijo, consulta con un especialista.</p>
+      <p class="copy">© 2026 Psic. Kari Moncayo. Todos los derechos reservados.</p>
+    </div>
+    <div>
+      <h4>Para profundizar</h4>
+      <ul>
+        <li><i>Disciplina positiva</i>, Jane Nelsen</li>
+        <li><i>El cerebro del niño</i>, Daniel J. Siegel y Tina Payne Bryson</li>
+        <li><i>Disciplina sin lágrimas</i>, Daniel J. Siegel y Tina Payne Bryson</li>
+        <li><i>Cómo hablar para que sus hijos le escuchen y cómo escuchar para que sus hijos le hablen</i>, Adele Faber y Elaine Mazlish</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<button class="sos" id="sosBtn" aria-haspopup="dialog"><i>SOS</i>Ayuda ahora</button>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-back" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="x" data-close aria-label="Cerrar">×</button>
+    <div id="modalBody" class="stack" style="gap:18px"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $ = function(s,r){return (r||document).querySelector(s)};
+var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var store = {
+  get:function(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+  set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+var esc = function(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]})};
+var norm = function(s){return String(s).normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase()};
+var CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+var DOT = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="currentColor"/></svg>';
+var ALERT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></svg>';
+
+/* ---------- DATOS ---------- */
+var PRINCIPIOS = [
+  ["Conexión antes que corrección","Un niño que se siente querido está más dispuesto a escucharte."],
+  ["La conducta comunica algo","Detrás de cada conducta difícil hay una necesidad o una habilidad que falta."],
+  ["Amabilidad y firmeza a la vez","Respetas lo que siente y sostienes lo que es necesario."],
+  ["Los errores enseñan","Los suyos y los tuyos son oportunidades para aprender a reparar."],
+  ["Pensar a largo plazo","Más que obediencia hoy, habilidades para toda la vida."],
+  ["Tú eres el ejemplo","Aprende más de lo que haces que de lo que dices."]
+];
+
+var CASA = {
+  calma:{t:"Los dos pisos se comunican",p:"Cuando tu hijo está tranquilo, la escalera funciona. Puede escucharte, esperar un poco y pensar en soluciones (dentro de lo que su edad le permite). Este es el mejor momento para enseñar, practicar y platicar.",tip:"<b>Aprovecha la calma.</b> Lo que quieras enseñar sobre cómo manejar el enojo, enséñalo aquí, no en plena tormenta.",st:"Escalera abierta"},
+  tormenta:{t:"Se cerró la escalera",p:"Algo encendió su alarma: un “no”, el cansancio, el hambre, la frustración. El piso de abajo toma el control y el de arriba se desconecta. En este momento no puede razonar, ni escuchar explicaciones, ni calmarse porque se lo pidas.",tip:"<b>No es manipulación, es biología.</b> Explicar o sermonear ahora no sirve. Acompañar sí.",st:"Escalera cerrada"},
+  prestas:{t:"Tu calma es su escalera",p:"Tu voz baja, tu cuerpo relajado y tu presencia le dicen a su cerebro que está a salvo. Poco a poco la alarma se apaga y la escalera vuelve a abrirse. Ya en calma, pueden hablar de lo que pasó y de qué hacer la próxima vez.",tip:"<b>A esto se le llama corregulación.</b> Con miles de repeticiones, tu hijo aprende a subir la escalera solo.",st:"Escalera reabriéndose"}
+};
+
+var FACTS = [
+  ["Se regula con tu regulación","Antes de aprender a calmarse solo, tu hijo necesita calmarse contigo. Tu tono, tu respiración y tu postura le dicen si está a salvo."],
+  ["No aprende en plena tormenta","Con la alarma encendida, la parte que razona no está disponible. Primero calma, después enseñanza."],
+  ["Nombrar ayuda a calmar","Poner en palabras lo que siente ayuda a bajar la intensidad de la emoción y le da vocabulario para la próxima vez."],
+  ["La repetición construye caminos","Cada vez que practica una habilidad, ese camino en su cerebro se fortalece. Por eso necesita oír la misma regla muchas veces."],
+  ["Su cuerpo influye en su conducta","Hambre, sueño, ruido o demasiados estímulos bajan su tolerancia. Muchas veces el berrinche empieza en el estómago."],
+  ["Aprende mirándote","Si quieres que aprenda a manejar el enojo, lo que más le enseña es ver cómo manejas el tuyo."]
+];
+
+var ICE = [
+  ["Pega o empuja",["Siente una emoción más grande que sus palabras","Está frustrado porque algo no salió como quería","Todavía no conoce otra forma de defenderse","Está cansado o sobreestimulado"]],
+  ["Grita y se tira al piso",["Su alarma interna se encendió","Tiene hambre o sueño","Necesita sentir que tiene algo de control","Le cuesta mucho cambiar de actividad"]],
+  ["No obedece",["Está absorto en su juego y de verdad no te oye","Necesita sentirse capaz y decidir algo","La instrucción fue larga o poco clara","Busca conexión: quiere tu atención"]],
+  ["Llora por todo",["Está acumulando estrés: cambios, escuela, un hermanito","Está muy cansado","Necesita más tiempo a solas contigo","Está aprendiendo a reconocer lo que siente"]],
+  ["Miente",["Tiene miedo al castigo o a decepcionarte","Quiere que lo veas como “bueno”","Mezcla fantasía y realidad (entre los 3 y 4 años)","Está estrenando una nueva habilidad mental"]],
+  ["Contesta feo",["Busca sentirse con poder","Imita algo que escuchó","Está agotado o frustrado","Siente que no lo escuchan"]]
+];
+
+var EDADES = {
+  "3–4":{nom:"La etapa del “yo solito”",
+    pasa:[["Cerebro","Su control de impulsos apenas empieza. Sabe la regla, pero todavía no puede frenarse a tiempo de forma constante."],["Emociones","Siente todo con mucha intensidad y cambia rápido de una emoción a otra. Los berrinches son parte normal del desarrollo."],["Lenguaje","Su vocabulario crece a gran velocidad, aunque aún le faltan palabras para lo que siente."],["Amigos","Juega cerca de otros niños y empieza a jugar con ellos. Compartir le cuesta mucho porque piensa desde su propio punto de vista."],["Pensamiento","Mezcla fantasía y realidad. Los monstruos pueden parecerle reales."]],
+    normal:["Decir “¡no!” y querer hacerlo todo solo","Tener berrinches, sobre todo con hambre o sueño","Tener miedo a la oscuridad, a ruidos o a monstruos","No querer compartir sus cosas","Pedir el mismo cuento una y otra vez","Olvidar una regla que ya “sabía”"],
+    ayuda:["Rutinas predecibles y con dibujos","Opciones limitadas: “¿la taza roja o la azul?”","Ponerle nombre a sus emociones muchas veces","Avisar antes de cada cambio de actividad","Juego libre todos los días","Un adulto calmado que acompaña sus berrinches"],
+    expect:"Puede seguir instrucciones de uno o dos pasos y esperar muy poco tiempo. Vas a tener que recordarle la misma regla muchas veces: eso es aprender, no desobedecer.",
+    consulta:["Pierde por un tiempo largo habilidades que ya tenía, como hablar o ir al baño","Casi no usa palabras o frases para comunicarse","Se lastima con frecuencia durante sus berrinches","Casi nunca mira a los ojos ni busca jugar con otros"]},
+  "5–6":{nom:"La etapa del “¿por qué?” y las reglas",
+    pasa:[["Cerebro","Empieza a frenar mejor sus impulsos y a esperar turnos, aunque con cansancio vuelve a costarle."],["Emociones","Puede nombrar emociones básicas y empieza a entender que los demás sienten distinto a él."],["Lenguaje","Hace muchas preguntas: “¿por qué?”, “¿de dónde vienen los bebés?”, “¿qué pasa cuando alguien se muere?”."],["Amigos","Juega en equipo y le importan las reglas del juego. Quiere ganar y perder le duele mucho."],["Escuela","La primaria le pide quedarse sentado, seguir reglas y separarse de casa. Llega cansado."]],
+    normal:["Decir “no es justo” y vigilar las reglas","Mentir para evitar problemas","Frustrarse o hacer trampa cuando pierde","Llegar de la escuela irritable o agotado","Querer ser “el primero” en todo","Cambiar rápido de mejor amigo"],
+    ayuda:["Darle responsabilidades reales en casa","Jugar juegos de mesa y mostrarle cómo pierdes tú","Responder sus preguntas con honestidad y sencillez","Un rato tranquilo de conexión después de la escuela","Hacer acuerdos juntos y dibujarlos o escribirlos","Reconocer su esfuerzo más que el resultado"],
+    expect:"Puede seguir instrucciones de varios pasos y ayudarte a resolver problemas sencillos. Todavía necesita tu ayuda para calmarse cuando la emoción es grande.",
+    consulta:["El miedo o la preocupación le impiden ir a la escuela o dormir durante semanas","Le cuesta mucho hacer amigos o se aísla","Sigue teniendo berrinches muy intensos varias veces al día","Su maestra nota dificultades de atención o aprendizaje que no mejoran"]},
+  "7–8":{nom:"La etapa del “es injusto” y los amigos",
+    pasa:[["Cerebro","Ya razona con lógica sobre cosas concretas. Puede pensar en lo que hizo y buscar otras soluciones."],["Emociones","Siente vergüenza y se compara con otros. Su autoestima depende cada vez más de lo que opinan sus amigos."],["Lenguaje","Usa las palabras para negociar, argumentar y a veces para retar. Aparecen el sarcasmo y las contestaciones."],["Amigos","Los amigos se vuelven muy importantes. Sentir que pertenece al grupo pesa mucho."],["Independencia","Quiere más privacidad, decidir por sí mismo y que lo traten como “grande”."]],
+    normal:["Contestar, voltear los ojos o discutir cada regla","Preocuparse por la escuela, las calificaciones o los amigos","Sentir vergüenza si lo corriges frente a otros","Ser muy duro consigo mismo","Querer las mismas cosas que sus amigos","Tener intereses intensos y coleccionar cosas"],
+    ayuda:["Reuniones familiares para resolver problemas juntos","Preguntas de curiosidad en lugar de sermones","Corregirlo en privado, nunca frente a otros","Darle poder real: elegir, opinar, decidir","Tiempo especial a solas, aunque diga que ya no lo necesita","Contarle tus propios errores y cómo los resolviste"],
+    expect:"Puede planear con ayuda, recordar acuerdos y proponer soluciones. Todavía necesita supervisión, estructura y tu calma cuando se desborda.",
+    consulta:["Habla de sí mismo con desprecio de forma constante: “soy tonto”, “nadie me quiere”","Cambios fuertes de sueño, apetito o ánimo que duran semanas","Se niega una y otra vez a ir a la escuela","Señales de acoso escolar: miedo, golpes sin explicación, cosas que se pierden"]}
+};
+
+var SIT = [
+  {t:"Berrinches y rabietas",e:["3–4","5–6","7–8"],k:"enojo llanto gritos piso",
+   que:"Su piso de abajo tomó el control. No puede razonar en este momento. No es manipulación: es un sistema de alarma que todavía no sabe apagarse solo. Necesita tu calma prestada.",
+   di:["Estoy aquí. No me voy.","Estás muy enojado porque querías quedarte en el parque.","No te dejo pegar. Puedes apretar este cojín."],
+   haz:["Respira tú primero.","Asegúrate de que esté a salvo.","Usa pocas palabras y voz baja.","Acompaña sin sermones. Ofrece un abrazo sin forzarlo.","Sostén el límite: el berrinche no cambia el “no”.","Cuando pase la tormenta, conecta y luego hablen de lo que pasó."],
+   evita:["Gritar o amenazar","Explicar o negociar en plena tormenta","Ceder para que pare (aprende que funciona)","Burlarte o decir “no es para tanto”"]},
+  {t:"No me hace caso",e:["3–4","5–6","7–8"],k:"obedecer escuchar ignorar ordenes",
+   que:"Su atención funciona como un túnel: cuando juega, de verdad no te oye. Además, las órdenes repetidas a distancia se vuelven ruido de fondo para su cerebro.",
+   di:["Veo que construyes una torre. En cinco minutos es hora del baño.","¿Qué sigue en tu tabla?","Zapatos. (Una sola palabra.)"],
+   haz:["Acércate y ponte a su altura.","Haz contacto visual o un toque suave.","Avisa los cambios con anticipación.","Da una sola instrucción a la vez.","Pídele que te repita lo que dijiste.","Si no responde, acompaña con acción amable: tómalo de la mano y vayan juntos."],
+   evita:["Gritar desde otro cuarto","Repetir diez veces la misma orden","Preguntar cuando no hay opción: “¿nos vamos?”","Dar varias instrucciones juntas"]},
+  {t:"Pega, muerde o empuja",e:["3–4","5–6"],k:"agresion golpes morder violencia",
+   que:"Tiene una emoción más grande que sus palabras. Pegar es un impulso que su piso de arriba todavía no frena bien. No es maldad, es una habilidad que le falta.",
+   di:["No te dejo pegar.","Estabas enojado porque te quitó el carro. Puedes decirle: “¡Es mío, devuélvemelo!”","Vamos a ver si tu hermana está bien."],
+   haz:["Detén su mano con firmeza y calma.","Atiende primero a quien recibió el golpe.","Nombra la emoción de quien pegó.","En un momento tranquilo, enséñale alternativas: pisar fuerte, apretar un cojín, decir “¡alto!”.","Invítalo a reparar: “¿Cómo podemos ayudar a que se sienta mejor?”"],
+   evita:["Pegarle “para que vea lo que se siente”","Obligarlo a decir un “perdón” vacío","Etiquetarlo: “eres agresivo”"]},
+  {t:"Peleas entre hermanos",e:["3–4","5–6","7–8"],k:"hermanos pelear competir celos",
+   que:"Compiten por lo que más valoran: tu atención y su lugar en la familia. Pelear también es una forma de practicar cómo negociar.",
+   di:["Veo a dos niños que quieren la misma pelota. Es un problema difícil. ¿Qué ideas tienen?","Confío en que pueden encontrar una solución. Vuelvo en dos minutos."],
+   haz:["Si no hay peligro, no tomes partido: describe lo que ves.","Ponlos en el mismo barco: las mismas reglas para los dos.","Ayúdalos a proponer soluciones.","Dale a cada uno tiempo especial a solas contigo."],
+   evita:["Hacer de juez: “¿quién empezó?”","Comparar: “tu hermano sí lo hace”","Darle siempre la razón al menor"]},
+  {t:"La hora de dormir",e:["3–4","5–6","7–8"],k:"dormir noche cama sueño",
+   que:"Separarse de ti al final del día puede ser difícil. Y cuando está demasiado cansado, su cuerpo se acelera: por eso parece que “tiene más pila”.",
+   di:["Primero pijama, luego cuento.","¿Quieres el cuento del dinosaurio o el del bosque?","Vengo a verte en cinco minutos."],
+   haz:["Sigue la misma rutina cada noche, en el mismo orden.","Baja luces y apaga pantallas una hora antes.","Platiquen: “¿Qué fue lo mejor y lo más difícil de hoy?”.","Si sale de la cama, regrésalo con calma y pocas palabras."],
+   evita:["Pantallas antes de dormir","Negociaciones infinitas","Asustarlo con el coco o monstruos"]},
+  {t:"Pantallas y tablet",e:["3–4","5–6","7–8"],k:"tablet celular television videojuegos tele",
+   que:"Las pantallas están diseñadas para atrapar la atención. Apagarlas provoca un bajón real en su cerebro: su enojo es una reacción esperable, no un capricho.",
+   di:["Cuando termine este capítulo, apagamos.","Es difícil apagarla, ¿verdad? Puedes estar enojado. Vamos a elegir qué hacemos ahora."],
+   haz:["Acuerden las reglas antes de prender la pantalla.","Avisa antes del final y usa un temporizador.","Ten lista una actividad para después.","Sé ejemplo con tu propio celular.","Entre los 3 y 5 años, los pediatras recomiendan no más de una hora al día de contenido de calidad."],
+   evita:["Usarla siempre como premio o castigo","Quitarla de golpe sin avisar","Pantallas en la mesa o en la recámara"]},
+  {t:"No quiere comer",e:["3–4","5–6"],k:"comida comer verduras mesa",
+   que:"Es normal que coma menos de lo que esperas y que desconfíe de los alimentos nuevos. Muchos niños necesitan probar algo varias veces antes de aceptarlo.",
+   di:["No tienes que comerlo. Puede quedarse en tu plato.","¿A qué crees que sabe?","Tu cuerpo te avisa cuando ya estás lleno."],
+   haz:["Tú decides qué, cuándo y dónde se come; tu hijo decide cuánto.","Sirve algo que le guste junto a lo nuevo.","Coman en familia y sin pantallas.","Invítalo a cocinar contigo."],
+   evita:["Obligarlo o insistir con “un bocado más”","Usar el postre como premio","Convertir la mesa en campo de batalla"]},
+  {t:"Dice mentiras",e:["5–6","7–8"],k:"mentir verdad honestidad",
+   que:"Mentir es un logro del desarrollo: significa que entiende que tú no sabes lo que él sabe. Casi siempre miente por miedo al castigo o para no decepcionarte.",
+   di:["Veo agua en el piso. ¿Con qué la secamos?","Gracias por decirme la verdad. Sé que no fue fácil.","Aquí puedes contarme las cosas, aunque sean difíciles."],
+   haz:["No hagas preguntas trampa cuando ya sabes la respuesta: describe y busquen una solución.","Agradece cuando diga la verdad.","Menos castigo y más reparación.","Entre los 3 y 4 años, distingue la fantasía de la mentira."],
+   evita:["Llamarlo mentiroso","Castigos duros (hacen que mienta más)","Interrogatorios"]},
+  {t:"Tiene miedo",e:["3–4","5–6"],k:"miedo oscuridad monstruos ansiedad",
+   que:"Su imaginación crece más rápido que su lógica. Para él, el monstruo puede ser real. Los miedos son normales y van cambiando con la edad.",
+   di:["Tienes miedo. Estoy contigo.","¿Cómo es ese monstruo? ¿Lo dibujamos?","Tu cuerpo está asustado. Vamos a respirar juntos."],
+   haz:["Toma su miedo en serio.","Enfrenten el miedo en pasos pequeños, a su ritmo.","Usen cuentos y juego para hablar del miedo.","Una lámpara o un peluche favorito pueden ayudar."],
+   evita:["Burlarte o decir “no seas miedoso”","Obligarlo a enfrentar todo de golpe","Usar el miedo para que obedezca"]},
+  {t:"Mañanas con prisa",e:["3–4","5–6","7–8"],k:"mañana vestirse escuela tarde prisa",
+   que:"Los niños viven en el presente; tu prisa no significa nada para su cerebro. Salir de casa exige muchas habilidades que apenas está practicando.",
+   di:["¿Qué sigue en tu tabla?","¿Primero los calcetines o la playera?","¿Le ganamos al reloj?"],
+   haz:["Preparen ropa y mochila la noche anterior.","Usen una rutina con dibujos.","Levántate quince minutos antes que tus hijos.","Ofrece opciones limitadas.","Convierte los pasos en juego."],
+   evita:["Gritar “¡apúrate!”","Pantallas por la mañana","Hacerlo todo por él siempre"]},
+  {t:"No recoge sus juguetes",e:["3–4","5–6"],k:"recoger juguetes orden cuarto",
+   que:"“Recoge tu cuarto” es una tarea enorme y abstracta para un niño pequeño. Necesita pasos concretos y que lo acompañes al principio.",
+   di:["Tú los bloques, yo los peluches.","Los carros se van a su estacionamiento.","Cuando los juguetes estén en su caja, salimos al parque."],
+   haz:["Divide la tarea en pasos pequeños.","Deja pocos juguetes a la vista y dale a cada cosa su lugar.","Pongan música para recoger.","Al principio recojan juntos y luego ve soltando."],
+   evita:["Amenazar con tirar sus juguetes","Esperar que a los tres años lo haga solo","Premios a cambio de recoger"]},
+  {t:"Celos por un hermanito",e:["3–4","5–6"],k:"bebe hermanito celos regresion",
+   que:"Siente que perdió su lugar. Volver a hablar como bebé o mojar la cama son formas de pedir cuidado. Suelen pasar con tiempo y cariño.",
+   di:["Extrañas cuando éramos solo tú y yo. Yo también extraño ese tiempo.","Tu lugar en esta familia es tuyo y nadie te lo quita.","¿Quieres ser mi bebé un ratito?"],
+   haz:["Dale tiempo especial diario a solas, de diez a quince minutos.","Permítele expresar lo que siente sobre el bebé: sentir no es hacer.","Invítalo a ayudar como hermano mayor, sin obligarlo."],
+   evita:["Decirle “ya eres grande”","Minimizar sus celos","Compararlo con el bebé"]},
+  {t:"Contesta mal o dice groserías",e:["5–6","7–8"],k:"groserias contestar respeto insultos",
+   que:"Está probando su poder y su lugar. Muchas veces imita lo que escucha. Detrás de una contestación suele haber cansancio, frustración o ganas de sentirse capaz.",
+   di:["Suena a que estás muy molesto. Quiero escucharte. Inténtalo otra vez con otro tono.","En esta casa nos hablamos con respeto. Te escucho cuando estés listo."],
+   haz:["No respondas con la misma intensidad.","Pídele que lo intente de nuevo.","Busca la necesidad que hay detrás.","Revisa cómo se habla en casa.","Dale más poder real: decisiones y responsabilidades."],
+   evita:["Responder con sarcasmo","Entrar en luchas de poder","Castigos que lo humillen"]},
+  {t:"No sabe perder",e:["5–6","7–8"],k:"perder ganar frustracion juegos trampa",
+   que:"Perder enciende su alarma. Está construyendo su autoestima y todavía siente que perder significa “no soy suficiente”.",
+   di:["Es frustrante perder. Tenías muchas ganas de ganar.","Equivocarse es parte de aprender.","¿Qué podrías intentar la próxima vez?"],
+   haz:["Jueguen juegos de mesa seguido.","Muéstrale cómo pierdes tú: “Ay, perdí. Me da un poco de tristeza, pero me divertí”.","Reconoce el esfuerzo, no solo el resultado."],
+   evita:["Dejarlo ganar siempre","Decirle “no es para tanto”","Burlarte cuando pierde"]},
+  {t:"La tarea es una batalla",e:["5–6","7–8"],k:"tarea escuela estudiar deberes",
+   que:"Después de horas de escuela, su capacidad de concentración está agotada. Si la tarea se vuelve pelea, empieza a asociar aprender con conflicto.",
+   di:["Primero comemos y jugamos un rato; luego tarea.","¿Por cuál quieres empezar?","Esta te costó y no te rendiste."],
+   haz:["Elijan un horario y un lugar fijo.","Antes, un descanso y algo de comer.","Divide la tarea en bloques cortos con pausas.","Acompaña sin hacerla por él.","Si siempre termina en llanto, habla con su maestra."],
+   evita:["Hacerle la tarea","Corregir con enojo","Quitarle el juego como castigo por la tarea"]}
+];
+
+var TOOLS = [
+  {id:"conecta",n:"Conecta antes de corregir",k:"Conexión",s:"Un niño que se siente conectado está más dispuesto a cooperar.",
+   why:"Cuando tu hijo se siente seguro y visto, su piso de arriba se vuelve a encender. Conectar no es premiar la conducta: es abrir la puerta para que pueda escucharte.",
+   steps:["Acércate y ponte a su altura.","Nombra lo que ves o lo que siente.","Ofrece un toque cálido si lo acepta.","Ahora sí, corrige o redirige con pocas palabras."],
+   ex:"“Te ves muy frustrado con esa torre. (Pausa, mano en el hombro.) Los bloques no se avientan. ¿Probamos con una base más ancha?”"},
+  {id:"nombra",n:"Nómbralo para calmarlo",k:"Emociones",s:"Poner palabras a lo que siente ayuda a bajar la alarma.",
+   why:"Cuando le pones nombre a una emoción, ayudas a conectar el piso de abajo con el de arriba. Además le das vocabulario para que algún día lo diga en vez de pegar o gritar.",
+   steps:["Observa su cara y su cuerpo.","Nombra la emoción con una frase corta: “Estás enojado”.","Valida: “Tiene sentido, querías seguir jugando”.","Si hace falta, pon el límite y ofrece una alternativa."],
+   ex:"“Estás triste porque se acabó la visita con la abuela. La vas a extrañar. ¿Quieres hacerle un dibujo para la próxima vez?”"},
+  {id:"firme",n:"Amable y firme a la vez",k:"Límites",s:"Respeta lo que siente y sostiene lo que es necesario.",
+   why:"La amabilidad respeta al niño; la firmeza respeta lo que la situación necesita. Juntas le enseñan que los límites existen y que tu amor no depende de su conducta.",
+   steps:["Valida su deseo o su emoción.","Di el límite con calma y en positivo.","Ofrece lo que sí puede hacer.","Sostén el límite con acción amable, sin repetir el sermón."],
+   ex:"“Entiendo que quieres otro dulce, y por hoy ya no hay más. Puedes elegir cuál guardamos para mañana.”",go:["herramientas","limite","Armar mi propio límite"]},
+  {id:"opciones",n:"Opciones limitadas",k:"Autonomía",s:"Dos opciones que tú aceptas le dan poder sin perder el límite.",
+   why:"Entre los 3 y los 8 años los niños necesitan sentirse capaces y con algo de control. Las opciones reducen las luchas de poder porque la pregunta deja de ser “si” y pasa a ser “cómo”.",
+   steps:["Decide qué no se negocia (por ejemplo, ponerse el suéter).","Ofrece dos opciones que te parezcan bien.","Si no elige, di con calma: “¿Eliges tú o elijo yo?”.","Cumple lo que dijiste."],
+   ex:"“¿Te pones primero los zapatos o la chamarra?” “¿Vamos al coche saltando como conejo o caminando como robot?”"},
+  {id:"cuando",n:"Cuando… entonces…",k:"Límites",s:"Cambia las amenazas por un orden claro de las cosas.",
+   why:"“Si no recoges, no hay parque” suena a amenaza y provoca resistencia. “Cuando recojas, nos vamos al parque” dice lo mismo, pero en positivo y deja el control en sus manos.",
+   steps:["Identifica lo que tiene que pasar primero.","Di la frase con calma: “Cuando… entonces…”.","No negocies ni repitas: espera.","Cumple la segunda parte en cuanto termine."],
+   ex:"“Cuando tengas la pijama puesta, entonces leemos el cuento.”"},
+  {id:"curiosidad",n:"Preguntas de curiosidad",k:"Autonomía",s:"Preguntar en lugar de ordenar lo invita a pensar.",
+   why:"Cuando das una orden, tu hijo solo obedece o se resiste. Cuando preguntas, su cerebro busca la respuesta y se siente capaz.",
+   steps:["Cambia la orden por una pregunta abierta.","Espera su respuesta sin apurarlo.","Reconoce lo que propone.","Ayúdalo a ponerlo en práctica."],
+   ex:"En vez de “¡Ponte los zapatos!”: “¿Qué necesitas en los pies para ir al parque?”"},
+  {id:"calma",n:"Rincón de la calma",k:"Emociones",s:"Un lugar para recuperar la calma, no para castigar.",
+   why:"A diferencia del “tiempo fuera” como castigo, el rincón de la calma es un lugar que tu hijo ayuda a crear y elige usar para sentirse mejor. Le enseña que calmarse es una habilidad, no una vergüenza.",
+   steps:["Elijan juntos un rincón y pónganle nombre, como “la cueva tranquila”.","Pongan cojines, un peluche, libros y una botella de la calma.","Practiquen cómo usarlo cuando todos estén tranquilos.","En un momento difícil, ofrécelo: “¿Te ayudaría ir a tu cueva? ¿Quieres que te acompañe?”."],
+   ex:"“Te veo muy enojado. ¿Vamos juntos a la cueva tranquila a respirar como dragón?”"},
+  {id:"especial",n:"Tiempo especial",k:"Conexión",s:"De 10 a 15 minutos al día, a solas y sin pantallas.",
+   why:"Muchas conductas difíciles buscan conexión. Un rato fijo y predecible a solas con cada hijo llena su tanque de pertenencia y reduce la búsqueda de atención negativa.",
+   steps:["Elige un horario fijo y ponle nombre: “nuestro rato de sol”.","Tu hijo elige la actividad, dentro de lo razonable.","Guarda el celular. Sigue su juego, no lo dirijas.","Al final dile: “Me encantó. Mañana nos toca otra vez.”"],
+   ex:"“Faltan cinco minutos para nuestro rato de sol. ¿Qué quieres jugar hoy?”"},
+  {id:"animar",n:"Animar en lugar de elogiar",k:"Conexión",s:"Describe su esfuerzo en vez de calificarlo.",
+   why:"“¡Qué listo eres!” habla del niño y puede hacer que tema equivocarse. Describir el esfuerzo y el proceso construye una autoestima que no depende de la aprobación de otros.",
+   steps:["Describe lo que ves: “Usaste muchos colores”.","Reconoce su esfuerzo o su estrategia.","Pregúntale cómo se siente él.","Evita las comparaciones."],
+   ex:"En vez de “¡Qué bonito!”: “Le pusiste mucho esfuerzo a ese dibujo. ¿Me cuentas qué es?”"},
+  {id:"consecuencias",n:"Consecuencias lógicas",k:"Límites",s:"Que aprenda a reparar, no a tener miedo.",
+   why:"El castigo busca que el niño “pague” y suele generar miedo, enojo o ganas de esconderse. Una consecuencia lógica está relacionada con lo que pasó y le enseña a hacerse responsable.",
+   steps:["Espera a que todos estén en calma.","Busca una consecuencia relacionada con lo que pasó.","Revisa que sea respetuosa, razonable y, cuando se pueda, avisada antes.","Aplícala con amabilidad y sin sermón."],
+   ex:"Si rayó la pared: “Las paredes no son para pintar. Vamos a limpiarla juntos con este trapo.”",go:["herramientas","consecuencias","Ver ejemplos de castigo y consecuencia"]},
+  {id:"rutinas",n:"Rutinas visuales",k:"Autonomía",s:"La tabla da la indicación, no tú.",
+   why:"Las rutinas le dan a su cerebro previsibilidad, y la previsibilidad baja la ansiedad. Una tabla con dibujos le permite saber qué sigue sin que tengas que repetirlo.",
+   steps:["Elijan juntos los pasos de la mañana o de la noche.","Usen dibujos o fotos de tu hijo haciendo cada paso.","Pongan la tabla a su altura.","Pregunta: “¿Qué sigue en tu tabla?”."],
+   ex:"“Ya tienes la pijama puesta. ¿Qué dice tu tabla que sigue?”",go:["rutinas","","Armar su rutina ahora"]},
+  {id:"reunion",n:"Reuniones familiares",k:"Autonomía",s:"Resolver problemas juntos una vez por semana. Ideal de 6 a 8 años.",
+   why:"Las reuniones familiares enseñan habilidades para la vida: escuchar, proponer, negociar y cumplir acuerdos. Los niños cooperan más con las reglas que ayudaron a crear.",
+   steps:["Empiecen con un agradecimiento de cada uno.","Revisen un problema de la semana.","Hagan una lluvia de ideas sin criticar.","Elijan una solución para probar una semana y terminen con algo divertido."],
+   ex:"“Esta semana el problema es que en las mañanas siempre llegamos tarde. ¿Qué ideas tienen?”"},
+  {id:"reparar",n:"Reparar después de un error",k:"Reparación",s:"Lo que enseña no es ser perfecto, sino saber arreglarlo.",
+   why:"Todos los papás gritan alguna vez. Lo que fortalece el vínculo es volver y reparar. Así tu hijo aprende cómo se pide perdón de verdad.",
+   steps:["Reconoce: “Me equivoqué cuando te grité”.","Reconcilia: “Lo siento. No te lo merecías”.","Resuelve: “¿Cómo lo arreglamos? Yo voy a respirar antes de hablar”."],
+   ex:"“Hace rato te grité y eso no estuvo bien. Estaba cansada, pero no es tu culpa. Lo siento. ¿Me das un abrazo?”"},
+  {id:"juego",n:"El juego como herramienta",k:"Conexión",s:"Jugar convierte una pelea en cooperación.",
+   why:"El juego es el idioma natural de los niños. Baja la tensión, crea conexión y les permite practicar habilidades, como pedir turno o calmarse, sin presión.",
+   steps:["Convierte la tarea en juego: carreras, voces chistosas, retos.","Usen juego de roles para practicar situaciones difíciles.","Deja que tu hijo sea el papá y tú el niño.","Ríanse juntos: la risa también calma."],
+   ex:"“¡Los calcetines están perdidos y lloran! Ayúdame a rescatarlos antes de que llegue el dragón.”"}
+];
+
+var LIM = {
+  parque:["quieres quedarte más tiempo en el parque","ya es hora de irnos a casa","elegir si nos vamos saltando o como cangrejo"],
+  pantalla:["te encanta ese programa y quieres ver otro capítulo","la tablet ya se apaga por hoy","elegir qué jugamos ahora: bloques o plastilina"],
+  dulce:["quieres otro dulce","por hoy ya no hay más dulces","elegir cuál guardamos para mañana"],
+  hermano:["estás muy enojado con tu hermano","no te dejo pegarle","pisar fuerte, apretar el cojín o decirle “¡no me gusta!”"],
+  dormir:["quieres seguir jugando y no tienes sueño","es hora de estar en la cama","elegir el cuento y cuántos abrazos de buenas noches"]
+};
+
+var FRASES = [
+  ["¡Deja de llorar!","Está bien llorar. Aquí estoy contigo."],
+  ["¡Pórtate bien!","En la tienda caminamos junto al carrito."],
+  ["Si no te apuras, te dejo.","Es hora de irnos. ¿Quieres llevar tú las llaves?"],
+  ["¡No corras!","Aquí caminamos despacio."],
+  ["¡Eres un desordenado!","Veo juguetes en el piso. ¿Dónde van los bloques?"],
+  ["No pasa nada, no es para tanto.","Eso te asustó. Cuéntame qué pasó."],
+  ["¡Qué listo eres!","Te esforzaste y no te rendiste."],
+  ["¿Por qué hiciste eso?","¿Qué pasó? Ayúdame a entender."],
+  ["Si no te comes la sopa, no hay postre.","Hoy hay sopa. Come lo que tu cuerpo necesite."],
+  ["¡Pídele perdón ahora mismo!","¿Cómo crees que se siente? ¿Qué podemos hacer para ayudarla?"],
+  ["¡Ya basta, me tienes harta!","Estoy perdiendo la paciencia. Voy a respirar un momento y vuelvo."],
+  ["Los niños grandes no lloran.","Todos sentimos tristeza a veces. Está bien sentirla."],
+  ["¡Te lo dije!","¿Qué aprendiste? ¿Qué harías diferente la próxima vez?"],
+  ["¡Comparte tus juguetes!","Puedes usarlo hasta que termines. Luego le toca a él."],
+  ["Mira qué bien come tu hermano.","¿Qué parte de tu comida quieres probar primero?"],
+  ["Vas a ver cuando llegue tu papá.","Esto lo resolvemos tú y yo ahora."],
+  ["¡Hazlo ya!","¿Lo haces tú solo o te ayudo?"],
+  ["¡No te enojes!","Puedes estar enojado. No puedes pegar."]
+];
+
+var NIVELES = {
+  rojo:{t:"Ya exploté",s:"Grité, dije algo que no quería o siento que perdí el control.",p:"Asegúrate de que todos estén a salvo. No tomes decisiones ni pongas castigos en este estado. Aléjate un momento si puedes. Cuando estés en calma, vuelve y repara: eso también le enseña a tu hijo."},
+  naranja:{t:"Estoy por explotar",s:"Siento calor, aprieto los puños, quiero gritar.",p:"Haz una pausa ahora. Si tu hijo está seguro, dile: “Necesito un momento para calmarme. Vuelvo enseguida.” Respira con exhalaciones largas. Cuando lo ves hacer esto, tu hijo aprende cómo se maneja el enojo."},
+  amarillo:{t:"Me estoy irritando",s:"Hablo más rápido, subo el tono, aprieto la mandíbula.",p:"Nombra lo que sientes en voz alta: “Me estoy frustrando”. Baja el volumen de tu voz a propósito y suelta los hombros. Pregúntate: ¿qué necesita mi hijo y qué necesito yo?"},
+  verde:{t:"Estoy tranquilo",s:"Me siento presente, con paciencia y buen humor.",p:"Es tu mejor momento para enseñar, jugar y conectar. Aprovecha para practicar con tu hijo las respiraciones o el rincón de la calma, y para llenar tu propio tanque."}
+};
+
+var TANQUE = ["Dormí lo suficiente","Comí bien hoy","Tuve al menos diez minutos para mí","Hablé con un adulto que me apoya","Me moví o salí al aire libre","Me hablé con amabilidad"];
+var HELP_KID = ["Su conducta pone en riesgo su seguridad o la de otros con frecuencia","Pierde habilidades que ya tenía","Tristeza, miedo o enojo que le impiden disfrutar su día durante semanas","Dificultades marcadas para relacionarse o comunicarse","Cambios fuertes de sueño o apetito que no mejoran"];
+var HELP_ME = ["Te sientes enojado, triste o agotado casi todos los días","Sientes que pierdes el control y temes lastimar a tu hijo","Tu propia infancia te pesa cuando educas","Hay mucho conflicto con tu pareja sobre la crianza","No disfrutas casi nada de la vida familiar"];
+
+var RETO = [
+  {w:"Semana 1",n:"Conexión",d:[
+    ["Tiempo especial","Juega diez minutos a lo que tu hijo elija, sin celular."],
+    ["A su altura","Cada vez que le hables hoy, agáchate a la altura de sus ojos."],
+    ["Lo mejor y lo difícil","En la cena pregunta: “¿Qué fue lo mejor y lo más difícil de tu día?”"],
+    ["Abrazo largo","Dale un abrazo de veinte segundos al despertar o antes de dormir."],
+    ["Mirar lo bueno","Anota tres cosas que tu hijo hizo bien hoy y díselas."],
+    ["Describe, no califiques","Cambia tres “¡qué bien!” por una descripción de su esfuerzo."],
+    ["Nombre secreto","Ponle nombre a su tiempo especial y hazlo de nuevo."]]},
+  {w:"Semana 2",n:"Emociones",d:[
+    ["Tus emociones en voz alta","Nombra una emoción tuya: “Estoy frustrada porque…”, y di qué haces con ella."],
+    ["Validar sin arreglar","Valida una emoción de tu hijo sin intentar quitársela."],
+    ["Cuento de emociones","Lean un cuento y pregunta cómo se sentía cada personaje."],
+    ["La flor y la vela","Practiquen la respiración juntos en un momento tranquilo."],
+    ["Rincón de la calma","Armen juntos su rincón de la calma y pónganle nombre."],
+    ["“Estoy aquí”","En el próximo berrinche, usa pocas palabras y quédate cerca."],
+    ["Tu botón rojo","Identifica qué te hace explotar y escribe tu plan C.A.L.M.A."]]},
+  {w:"Semana 3",n:"Límites y autonomía",d:[
+    ["Dos opciones","Ofrece opciones limitadas al menos tres veces hoy."],
+    ["Su rutina","Armen juntos su tabla de rutina de la mañana o de la noche."],
+    ["Cuando… entonces…","Cambia una amenaza por un “Cuando… entonces…”."],
+    ["Pregunta, no ordenes","Cambia tres órdenes por preguntas de curiosidad."],
+    ["Una responsabilidad real","Dale una tarea de verdad: poner la mesa, regar plantas, alimentar a la mascota."],
+    ["Repara","Si te equivocaste esta semana, repara con las tres R."],
+    ["Reunión familiar","Hagan su primera reunión: agradecimientos, un problema por resolver y algo divertido."]]}
+];
+
+/* Iconos de rutina */
+var IC = {
+  sol:'<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>',
+  bano:'<path d="M6 3h5v7H6z"/><path d="M4 10h16a7 7 0 0 1-7 7h-1.5l1 4h-5l1-4.4A7 7 0 0 1 4 10z"/>',
+  ropa:'<path d="M8 3 3 6l2 4 3-1v12h8V9l3 1 2-4-5-3c-1 1.5-2.3 2-4 2s-3-.5-4-2z"/>',
+  comer:'<path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 7.5c0-1 1-1 1-2.5M12 7.5c0-1 1-1 1-2.5M16 7.5c0-1 1-1 1-2.5"/>',
+  dientes:'<path d="M3.5 20.5 13 11"/><path d="M12 8l4 4 5-5-4-4z"/><path d="M14.5 5.5l1 1M16.5 3.5l1 1"/>',
+  peinar:'<rect x="3" y="7" width="18" height="4" rx="1"/><path d="M5 11v6M8 11v6M11 11v6M14 11v6M17 11v6M20 11v4"/>',
+  zapatos:'<path d="M3 17v-6.5l4-1.5 2 3h3l7 2.2a2.5 2.5 0 0 1 2 2.4V17z"/><path d="M3 20h18"/>',
+  mochila:'<rect x="5" y="7" width="14" height="14" rx="3"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7M9 13h6v4H9z"/>',
+  banarse:'<path d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/>',
+  dormir:'<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
+  cuento:'<path d="M12 6.5C10 5 7 4.5 4 4.5v14c3 0 6 .5 8 2 2-1.5 5-2 8-2v-14c-3 0-6 .5-8 2z"/><path d="M12 6.5v14"/>',
+  recoger:'<rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/><rect x="8" y="3" width="8" height="8" rx="1"/>',
+  tarea:'<path d="M4 20l1-5L16 4l4 4L9 19z"/><path d="M14 6l4 4"/>',
+  jugar:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 2.5 4 6 4 9s-1 6.5-4 9M12 3c-3 2.5-4 6-4 9s1 6.5 4 9"/>',
+  abrazo:'<path d="M12 20s-7.5-4.6-7.5-10.2A4.1 4.1 0 0 1 12 7.3a4.1 4.1 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/>',
+  agua:'<path d="M6 4h12l-1.5 16h-9z"/><path d="M6.5 9h11"/>',
+  manos:'<path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/>',
+  pijama:'<path d="M8 3 3 6l2 4 3-1v12h8V9l3 1 2-4-5-3c-1 1.5-2.3 2-4 2s-3-.5-4-2z"/><path d="M11 13.5l.6 1.2 1.3.2-1 .9.3 1.3-1.2-.7-1.2.7.3-1.3-1-.9 1.3-.2z"/>'
+};
+var PASOS = {
+  despertar:["Despertar","sol"], bano:["Ir al baño","bano"], manos:["Lavarse las manos","manos"], vestirse:["Vestirse","ropa"],
+  desayunar:["Desayunar","comer"], comer:["Comer","comer"], cenar:["Cenar","comer"], dientes:["Lavarse los dientes","dientes"],
+  peinarse:["Peinarse","peinar"], zapatos:["Ponerse los zapatos","zapatos"], mochila:["Preparar la mochila","mochila"],
+  banarse:["Bañarse","banarse"], pijama:["Ponerse la pijama","pijama"], cuento:["Leer un cuento","cuento"],
+  recoger:["Recoger juguetes","recoger"], tarea:["Hacer la tarea","tarea"], jugar:["Jugar","jugar"],
+  agua:["Tomar agua","agua"], abrazo:["Abrazo","abrazo"], dormir:["A dormir","dormir"]
+};
+var RT_BASE = {
+  manana:["despertar","bano","vestirse","desayunar","dientes","peinarse","zapatos","mochila"],
+  tarde:["manos","comer","jugar","tarea","recoger","agua"],
+  noche:["cenar","recoger","banarse","pijama","dientes","cuento","abrazo","dormir"]
+};
+var RT_NOM = {manana:"mañana",tarde:"tarde",noche:"noche"};
+function icon(k,cls){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"'+(cls?' class="'+cls+'"':'')+'>'+IC[k]+'</svg>'}
+
+/* ---------- NAVEGACIÓN ---------- */
+var VIEWS = ["inicio","cerebro","edades","tdah","situaciones","herramientas","frases","parati","reto","rutinas"];
+function show(id, target){
+  if(VIEWS.indexOf(id)<0) id="inicio";
+  $$("[data-view]").forEach(function(s){s.hidden = s.getAttribute("data-view")!==id});
+  $$("#rail button").forEach(function(b){
+    if(b.getAttribute("data-go")===id){b.setAttribute("aria-current","page");try{b.scrollIntoView({inline:"center",block:"nearest"})}catch(e){}}
+    else b.removeAttribute("aria-current");
+  });
+  store.set("ccc-view",id);
+  try{history.replaceState(null,"","#"+id)}catch(e){}
+  var el = target && document.getElementById(target);
+  if(el){setTimeout(function(){el.scrollIntoView({behavior:"smooth",block:"start"})},30)}
+  else window.scrollTo(0,0);
+}
+document.addEventListener("click",function(e){
+  var g = e.target.closest("[data-go]");
+  if(g){e.preventDefault();closeModal();show(g.getAttribute("data-go"),g.getAttribute("data-target"))}
+});
+
+/* ---------- INICIO ---------- */
+$("#principles").innerHTML = PRINCIPIOS.map(function(p){return '<li>'+CHECK+'<div><b>'+p[0]+'</b><span>'+p[1]+'</span></div></li>'}).join("");
+var day = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,0))/864e5);
+var fd = day % FRASES.length;
+function renderFD(){ $("#fdFrom").textContent = "En vez de: "+FRASES[fd][0]; $("#fdTo").textContent = FRASES[fd][1]; }
+renderFD();
+$("#fdNext").addEventListener("click",function(){fd=(fd+1)%FRASES.length;renderFD()});
+
+/* ---------- CEREBRO ---------- */
+function setHouse(st){
+  $("#house").setAttribute("data-state",st);
+  $$(".states button").forEach(function(b){b.setAttribute("aria-selected",String(b.getAttribute("data-state")===st))});
+  var c = CASA[st];
+  $("#stairsTxt").textContent = c.st;
+  $("#houseExplain").innerHTML = '<p class="lbl">'+({calma:"Estado 1",tormenta:"Estado 2",prestas:"Estado 3"})[st]+' de 3</p><h4>'+c.t+'</h4><p>'+c.p+'</p><p class="tip">'+c.tip+'</p>';
+}
+$$(".states button").forEach(function(b){b.addEventListener("click",function(){setHouse(b.getAttribute("data-state"))})});
+setHouse("calma");
+$("#facts").innerHTML = FACTS.map(function(f){return '<div class="fact"><h4>'+f[0]+'</h4><p>'+f[1]+'</p></div>'}).join("");
+function setIce(i){
+  $$("#iceChips .chip").forEach(function(c,j){c.setAttribute("aria-pressed",String(i===j))});
+  $("#bergTip").textContent = ICE[i][0];
+  $("#bergList").innerHTML = ICE[i][1].map(function(x){return '<li>'+x+'</li>'}).join("");
+}
+$("#iceChips").innerHTML = ICE.map(function(x,i){return '<button class="chip" aria-pressed="false" data-i="'+i+'">'+x[0]+'</button>'}).join("");
+$$("#iceChips .chip").forEach(function(c){c.addEventListener("click",function(){setIce(+c.getAttribute("data-i"))})});
+setIce(0);
+
+/* ---------- EDADES ---------- */
+var ageKeys = Object.keys(EDADES);
+$("#ageTabs").innerHTML = ageKeys.map(function(k){return '<button class="age-tab" role="tab" data-a="'+k+'"><b>'+k+' años</b><small>'+EDADES[k].nom.replace(/^La etapa (del |de )?/,"")+'</small></button>'}).join("");
+function setAge(k){
+  $$("#ageTabs .age-tab").forEach(function(b){b.setAttribute("aria-selected",String(b.getAttribute("data-a")===k))});
+  var a = EDADES[k];
+  store.set("ccc-age",k);
+  $("#agePanel").innerHTML =
+    '<h3 class="age-title">'+k+' años · '+a.nom+'</h3>'+
+    '<div class="age-grid">'+
+      '<div class="card"><p class="lbl">Lo que está pasando</p><div class="areas">'+a.pasa.map(function(p){return '<div class="area"><b>'+p[0]+'</b><p>'+p[1]+'</p></div>'}).join("")+'</div></div>'+
+      '<div class="stack">'+
+        '<div class="card"><p class="lbl">Es normal que…</p><ul class="list normal">'+a.normal.map(function(x){return '<li>'+DOT+'<span>'+x+'</span></li>'}).join("")+'</ul></div>'+
+        '<div class="expect"><p class="lbl">Expectativa realista</p><p>'+a.expect+'</p></div>'+
+      '</div>'+
+      '<div class="card"><p class="lbl">Lo que le ayuda</p><ul class="list ok">'+a.ayuda.map(function(x){return '<li>'+CHECK+'<span>'+x+'</span></li>'}).join("")+'</ul></div>'+
+      '<div class="card"><p class="lbl">Consulta con un profesional si…</p><ul class="list alert">'+a.consulta.map(function(x){return '<li>'+ALERT+'<span>'+x+'</span></li>'}).join("")+'</ul></div>'+
+    '</div>'+
+    '<div class="cta-row"><button class="btn soft small" data-go="situaciones">Ver situaciones para esta edad</button></div>';
+  sitAge = k; renderSits();
+}
+$$("#ageTabs .age-tab").forEach(function(b){b.addEventListener("click",function(){setAge(b.getAttribute("data-a"))})});
+
+/* ---------- SITUACIONES ---------- */
+var sitAge = "todas", sitQ = "";
+$("#sitAges").innerHTML = [["todas","Todas las edades"]].concat(ageKeys.map(function(k){return [k,k+" años"]})).map(function(a){return '<button class="chip" data-a="'+a[0]+'" aria-pressed="false">'+a[1]+'</button>'}).join("");
+$$("#sitAges .chip").forEach(function(c){c.addEventListener("click",function(){sitAge=c.getAttribute("data-a");renderSits()})});
+$("#sitSearch").addEventListener("input",function(e){sitQ=norm(e.target.value.trim());renderSits()});
+function renderSits(){
+  $$("#sitAges .chip").forEach(function(c){c.setAttribute("aria-pressed",String(c.getAttribute("data-a")===sitAge))});
+  var list = SIT.filter(function(s){
+    if(sitAge!=="todas" && s.e.indexOf(sitAge)<0) return false;
+    if(sitQ && norm(s.t+" "+s.k+" "+s.que).indexOf(sitQ)<0) return false;
+    return true;
+  });
+  $("#sitCount").textContent = list.length===1 ? "1 situación" : list.length+" situaciones";
+  if(!list.length){$("#sits").innerHTML='<p class="empty">No encontramos esa situación. Prueba con otra palabra, como “dormir”, “hermanos” o “gritos”.</p>';return}
+  $("#sits").innerHTML = list.map(function(s,i){
+    return '<details class="sit"'+(i===0?' open':'')+'><summary><span class="sit-t">'+s.t+'</span><span class="ages">'+s.e.map(function(a){return '<span class="age">'+a+'</span>'}).join("")+'</span><span class="chev" aria-hidden="true"></span></summary>'+
+      '<div class="sit-body"><div class="sit-col"><div class="why"><p class="lbl">Qué está pasando</p><p>'+s.que+'</p></div>'+
+      '<div><p class="lbl">Qué decir</p><div class="bubbles">'+s.di.map(function(d){return '<p class="bubble">'+d+'</p>'}).join("")+'</div></div></div>'+
+      '<div class="sit-col"><div><p class="lbl">Qué hacer</p><ol class="steps">'+s.haz.map(function(h){return '<li><span>'+h+'</span></li>'}).join("")+'</ol></div>'+
+      '<div class="avoid"><p class="lbl">Evita</p><ul>'+s.evita.map(function(x){return '<li><span>'+x+'</span></li>'}).join("")+'</ul></div></div></div></details>';
+  }).join("");
+}
+
+/* ---------- HERRAMIENTAS ---------- */
+var toolTag = "Todas";
+var TAGS = ["Todas","Conexión","Emociones","Límites","Autonomía","Reparación"];
+$("#toolTags").innerHTML = TAGS.map(function(t){return '<button class="chip" data-t="'+t+'" aria-pressed="'+(t==="Todas")+'">'+t+'</button>'}).join("");
+$$("#toolTags .chip").forEach(function(c){c.addEventListener("click",function(){toolTag=c.getAttribute("data-t");renderTools()})});
+function renderTools(){
+  $$("#toolTags .chip").forEach(function(c){c.setAttribute("aria-pressed",String(c.getAttribute("data-t")===toolTag))});
+  $("#tools").innerHTML = TOOLS.filter(function(t){return toolTag==="Todas"||t.k===toolTag}).map(function(t){
+    return '<button class="tool" data-tool="'+t.id+'"><span class="k">'+t.k+'</span><span class="tt">'+t.n+'</span><span class="ts">'+t.s+'</span><span class="more">Ver cómo aplicarla →</span></button>';
+  }).join("");
+}
+renderTools();
+$("#tools").addEventListener("click",function(e){
+  var b = e.target.closest("[data-tool]"); if(!b) return;
+  var t = TOOLS.filter(function(x){return x.id===b.getAttribute("data-tool")})[0];
+  openModal('<p class="eyebrow">'+t.k+'</p><h3 id="modalTitle">'+t.n+'</h3>'+
+    '<div class="why"><p class="lbl">Por qué funciona</p><p>'+t.why+'</p></div>'+
+    '<div><p class="lbl">Cómo aplicarla</p><ol class="steps">'+t.steps.map(function(s){return '<li><span>'+s+'</span></li>'}).join("")+'</ol></div>'+
+    '<div><p class="lbl">Ejemplo</p><p class="ex">'+t.ex+'</p></div>'+
+    (t.go?'<div><button class="btn primary small" data-go="'+t.go[0]+'"'+(t.go[1]?' data-target="'+t.go[1]+'"':'')+'>'+t.go[2]+'</button></div>':''), b);
+});
+
+function limRender(){
+  var a=$("#limA").value.trim()||"…", b=$("#limB").value.trim()||"…", c=$("#limC").value.trim()||"…";
+  $("#limOut").innerHTML = "Entiendo que <em>"+esc(a)+"</em>, y "+esc(b)+". Puedes <em>"+esc(c)+"</em>.";
+}
+function limLoad(k){var p=LIM[k];$("#limA").value=p[0];$("#limB").value=p[1];$("#limC").value=p[2];limRender()}
+$("#limPreset").addEventListener("change",function(e){limLoad(e.target.value)});
+["#limA","#limB","#limC"].forEach(function(s){$(s).addEventListener("input",limRender)});
+if(!$("#limA").value) limLoad("parque"); else limRender();
+$("#limCopy").addEventListener("click",function(){
+  var txt=$("#limOut").textContent, btn=this;
+  function ok(){btn.textContent="Frase copiada";setTimeout(function(){btn.textContent="Copiar frase"},1800)}
+  function fallback(){var r=document.createRange();r.selectNodeContents($("#limOut"));var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent="Frase seleccionada: cópiala"}
+  try{navigator.clipboard.writeText(txt).then(ok,fallback)}catch(e){fallback()}
+});
+
+/* ---------- FRASES ---------- */
+$("#phrases").innerHTML = FRASES.map(function(f){
+  return '<button class="flip" aria-pressed="false"><span class="flip-in"><span class="face front"><span class="lbl">En vez de</span><span class="ft">'+f[0]+'</span><small>Toca para ver la alternativa</small></span><span class="face back"><span class="lbl">Prueba</span><span class="ft">'+f[1]+'</span><small>Toca para regresar</small></span></span></button>';
+}).join("");
+$("#phrases").addEventListener("click",function(e){var f=e.target.closest(".flip");if(!f)return;f.classList.toggle("on");f.setAttribute("aria-pressed",String(f.classList.contains("on")))});
+$("#mitos").addEventListener("click",function(e){var f=e.target.closest(".flip");if(!f)return;f.classList.toggle("on");f.setAttribute("aria-pressed",String(f.classList.contains("on")))});
+var allOn=false;
+$("#flipAll").addEventListener("click",function(){allOn=!allOn;$$("#phrases .flip").forEach(function(f){f.classList.toggle("on",allOn);f.setAttribute("aria-pressed",String(allOn))});this.textContent=allOn?"Regresar todas":"Voltear todas"});
+
+/* ---------- PARA TI ---------- */
+function setLvl(l){
+  $$("#levels .lvl").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-l")===l))});
+  var n=NIVELES[l];
+  $("#lvlDetail").innerHTML='<h4>'+n.t+'</h4><p class="signs"><b>Señales:</b> '+n.s+'</p><p>'+n.p+'</p>';
+}
+$$("#levels .lvl").forEach(function(b){b.addEventListener("click",function(){setLvl(b.getAttribute("data-l"))})});
+setLvl("amarillo");
+
+var br={on:false,t:null,r:0}, PH=[["Huele la flor",4000,true],["Sopla la vela",6000,false]], ROUNDS=5;
+function brStop(msg){
+  br.on=false;clearTimeout(br.t);
+  var o=$("#orb");o.style.transitionDuration="1200ms";o.classList.remove("in");
+  $("#orbTxt").textContent=msg||"Lista";$("#breathBtn").textContent="Empezar";
+  $("#rounds").textContent=msg?"¡Muy bien! Terminaste 5 respiraciones.":"5 respiraciones · 50 segundos";
+}
+function brStep(i){
+  if(!br.on) return;
+  if(i===0){br.r++; if(br.r>ROUNDS){brStop("Bien hecho");return}}
+  var p=PH[i], o=$("#orb");
+  o.style.transitionDuration=p[1]+"ms"; o.classList.toggle("in",p[2]);
+  $("#orbTxt").textContent=p[0];
+  $("#rounds").textContent="Respiración "+br.r+" de "+ROUNDS;
+  br.t=setTimeout(function(){brStep(i?0:1)},p[1]);
+}
+$("#breathBtn").addEventListener("click",function(){
+  if(br.on){brStop();return}
+  br.on=true;br.r=0;this.textContent="Detener";brStep(0);
+});
+
+$("#tankChecks").innerHTML=TANQUE.map(function(t,i){return '<li><label><input type="checkbox" id="tk'+i+'"> '+t+'</label></li>'}).join("");
+function tank(){
+  var n=$$("#tankChecks input").filter(function(c){return c.checked}).length;
+  $("#gaugeFill").style.height=(n/TANQUE.length*100)+"%";
+  $("#gaugeTxt").textContent=n+" de "+TANQUE.length;
+  $("#gaugeMsg").textContent = n<=2?"Hoy tu tanque está bajo. Sé amable contigo y pide ayuda si puedes.":n<=4?"Vas bien. ¿Qué pequeña cosa puedes sumar hoy?":"Tanque lleno. Gran día para conectar.";
+}
+$("#tankChecks").addEventListener("change",tank); tank();
+$("#helpKid").innerHTML=HELP_KID.map(function(x){return '<li>'+ALERT+'<span>'+x+'</span></li>'}).join("");
+$("#helpMe").innerHTML=HELP_ME.map(function(x){return '<li>'+ALERT+'<span>'+x+'</span></li>'}).join("");
+
+/* ---------- RETO ---------- */
+var reto = store.get("ccc-reto",[]); if(!Array.isArray(reto)) reto=[];
+function retoRender(){
+  var k=0;
+  $("#weeks").innerHTML = RETO.map(function(w){
+    return '<div class="week"><h4>'+w.w+': '+w.n+' <small>Días '+(k+1)+' a '+(k+7)+'</small></h4><div class="days">'+w.d.map(function(d){
+      var i=k++; var on=!!reto[i];
+      return '<label class="day'+(on?' done':'')+'" for="rd'+i+'"><span class="dn">Día '+(i+1)+'</span><b>'+d[0]+'</b><span class="dt">'+d[1]+'</span><input type="checkbox" id="rd'+i+'" data-i="'+i+'"'+(on?' checked':'')+'></label>';
+    }).join("")+'</div></div>';
+  }).join("");
+  retoProg();
+}
+function retoProg(){
+  var n=reto.filter(Boolean).length, pct=n/21*100;
+  $("#retoN").innerHTML=n+'<small> / 21</small>';
+  $("#retoBar").style.width=pct+"%"; $("#railBar").style.width=pct+"%";
+  $("#railProg").textContent="Reto: "+n+" de 21 días";
+  var next=0; while(next<21&&reto[next]) next++;
+  $("#retoMsg").textContent = n===0?"Empieza hoy con el día 1.":n===21?"¡Completaste los 21 días! Estos pequeños pasos ya son parte de tu familia.":n>=14?"Ya vas en la recta final. Sigue con el día "+(next+1)+".":"Vas muy bien. Tu siguiente reto es el día "+(next+1)+".";
+}
+$("#weeks").addEventListener("change",function(e){
+  var c=e.target; if(!c.matches("input[data-i]")) return;
+  reto[+c.getAttribute("data-i")]=c.checked; store.set("ccc-reto",reto);
+  c.closest(".day").classList.toggle("done",c.checked); retoProg();
+});
+var resetArm=null;
+$("#retoReset").addEventListener("click",function(){
+  var b=this;
+  if(!resetArm){b.textContent="¿Seguro? Toca otra vez para borrar tu avance";b.classList.add("warn");resetArm=setTimeout(function(){resetArm=null;b.textContent="Reiniciar reto";b.classList.remove("warn")},4000);return}
+  clearTimeout(resetArm);resetArm=null;reto=[];store.set("ccc-reto",reto);retoRender();b.textContent="Reto reiniciado";b.classList.remove("warn");
+  setTimeout(function(){b.textContent="Reiniciar reto"},1800);
+});
+retoRender();
+
+/* ---------- RUTINAS ---------- */
+var rt = store.get("ccc-rt",null);
+if(!rt||!rt.listas) rt={tipo:"manana",modo:"nino",nombre:"",listas:JSON.parse(JSON.stringify(RT_BASE)),hechos:{manana:[],tarde:[],noche:[]}};
+function rtSave(){store.set("ccc-rt",rt)}
+$("#rtName").value = rt.nombre||"";
+$("#rtName").addEventListener("input",function(e){rt.nombre=e.target.value;rtSave();rtTitle()});
+$$("#rtTipo button").forEach(function(b){b.addEventListener("click",function(){rt.tipo=b.getAttribute("data-t");rtSave();rtRender()})});
+$$("#rtModo button").forEach(function(b){b.addEventListener("click",function(){rt.modo=b.getAttribute("data-m");rtSave();rtRender()})});
+function rtTitle(){
+  var n=(rt.nombre||"").trim(), m=RT_NOM[rt.tipo];
+  $("#rtTitle").textContent = n ? ("La "+m+" de "+n) : ("Mi "+m);
+}
+function rtRender(){
+  $$("#rtTipo button").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-t")===rt.tipo))});
+  $$("#rtModo button").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-m")===rt.modo))});
+  rtTitle();
+  var L=rt.listas[rt.tipo], H=rt.hechos[rt.tipo]||[], kid=rt.modo==="nino";
+  if(!L.length){$("#rtSteps").innerHTML='<li class="empty" style="grid-column:1/-1">Esta rutina no tiene pasos. Cambia a “Editar” y agrega el primero.</li>'}
+  else $("#rtSteps").innerHTML = L.map(function(id,i){
+    var p=PASOS[id], done=H.indexOf(id)>=0;
+    var inner='<span class="num">'+(i+1)+'</span>'+icon(p[1])+'<b>'+p[0]+'</b><span class="ok">'+CHECK+'</span>';
+    if(kid) return '<li><button class="rt-step tap'+(done?' done':'')+'" data-id="'+id+'" aria-pressed="'+done+'">'+inner+'</button></li>';
+    return '<li class="rt-step">'+inner+'<span class="rt-ctrl"><button data-mv="-1" data-i="'+i+'" aria-label="Mover antes"'+(i===0?' disabled':'')+'>←</button><button data-mv="1" data-i="'+i+'" aria-label="Mover después"'+(i===L.length-1?' disabled':'')+'>→</button><button data-rm="'+i+'" aria-label="Quitar paso">×</button></span></li>';
+  }).join("");
+  var foot="";
+  if(kid){
+    var all=L.length&&L.every(function(id){return H.indexOf(id)>=0});
+    if(all) foot='<p class="cheer">¡Lo lograste! Terminaste tu rutina.</p>';
+    foot+='<div class="cta-row"><button class="btn small soft" id="rtClear">Empezar de nuevo</button></div>';
+  } else {
+    var faltan=Object.keys(PASOS).filter(function(k){return L.indexOf(k)<0});
+    foot='<div class="rt-add"><p class="lbl">Agregar un paso</p><div class="chips">'+faltan.map(function(k){return '<button class="chip" data-add="'+k+'">+ '+PASOS[k][0]+'</button>'}).join("")+'</div>'+
+      '<div class="cta-row"><button class="btn small primary" data-m2="nino">Listo, pasar a modo niño</button><button class="linkish" id="rtDefault">Restaurar la rutina sugerida</button></div></div>';
+  }
+  $("#rtFoot").innerHTML=foot;
+}
+$(".rt-board").addEventListener("click",function(e){
+  var L=rt.listas[rt.tipo], t;
+  if((t=e.target.closest(".rt-step.tap"))){
+    var id=t.getAttribute("data-id"), H=rt.hechos[rt.tipo]=rt.hechos[rt.tipo]||[], j=H.indexOf(id);
+    if(j>=0) H.splice(j,1); else H.push(id);
+    rtSave(); rtRender(); return;
+  }
+  if((t=e.target.closest("[data-mv]"))){var i=+t.getAttribute("data-i"),d=+t.getAttribute("data-mv"),x=L[i];L[i]=L[i+d];L[i+d]=x;rtSave();rtRender();return}
+  if((t=e.target.closest("[data-rm]"))){L.splice(+t.getAttribute("data-rm"),1);rtSave();rtRender();return}
+  if((t=e.target.closest("[data-add]"))){L.push(t.getAttribute("data-add"));rtSave();rtRender();return}
+  if((t=e.target.closest("[data-m2]"))){rt.modo="nino";rtSave();rtRender();return}
+  if(e.target.closest("#rtClear")){rt.hechos[rt.tipo]=[];rtSave();rtRender();return}
+  if(e.target.closest("#rtDefault")){rt.listas[rt.tipo]=RT_BASE[rt.tipo].slice();rt.hechos[rt.tipo]=[];rtSave();rtRender();return}
+});
+rtRender();
+
+/* ---------- MODAL / SOS ---------- */
+var lastFocus=null;
+function openModal(html, from){
+  lastFocus = from || document.activeElement;
+  $("#modalBody").innerHTML=html; $("#modal").hidden=false;
+  document.body.style.overflow="hidden";
+  setTimeout(function(){$("#modal .x").focus()},10);
+}
+function closeModal(){
+  if($("#modal").hidden) return;
+  $("#modal").hidden=true; document.body.style.overflow="";
+  if(lastFocus&&lastFocus.focus) try{lastFocus.focus({preventScroll:true})}catch(e){}
+}
+$("#modal").addEventListener("click",function(e){if(e.target.closest("[data-close]"))closeModal()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal()});
+
+var SOS = {
+  hijo:{t:"Mi hijo está en pleno berrinche",steps:[
+    ["1","Respira tú primero","Exhala largo dos veces. Tu calma es lo primero que necesita."],
+    ["2","Revisa que esté a salvo","Aleja objetos peligrosos o a otros niños si hace falta."],
+    ["3","Baja la voz, pocas palabras","“Estoy aquí.” “Te ayudo.” Nada más por ahora."],
+    ["4","Acompaña sin sermones","No expliques ni negocies. Ofrece un abrazo sin forzarlo."],
+    ["5","Sostén el límite con cariño","Lo que era “no” sigue siendo “no”. Tu tono puede ser suave."],
+    ["6","Cuando pase, conecta","Abrazo, agua, descanso. Hablen de lo que pasó más tarde, en calma."]]},
+  yo:{t:"Yo estoy por explotar",steps:[
+    ["C","Calla un momento","No digas nada durante cinco segundos."],
+    ["A","Aléjate un paso","Si tu hijo está seguro: “Necesito un momento. Vuelvo enseguida.”"],
+    ["L","Llena tus pulmones","Inhala por la nariz y exhala más largo, tres veces."],
+    ["M","Mira detrás","¿Tiene hambre, sueño, frustración? ¿Y tú, qué necesitas?"],
+    ["A","Actúa con calma","Vuelve con voz baja y una sola frase. Si ya gritaste, repara después."]]}
+};
+function sosHTML(k){
+  var s=SOS[k];
+  return '<p class="eyebrow" style="color:var(--coral)">SOS · Ayuda ahora</p><h3 id="modalTitle">'+s.t+'</h3>'+
+    '<div class="tabs-mini"><button class="chip" data-sos="hijo" aria-pressed="'+(k==="hijo")+'">Mi hijo está desbordado</button><button class="chip" data-sos="yo" aria-pressed="'+(k==="yo")+'">Yo estoy por explotar</button></div>'+
+    '<ol class="sos-steps">'+s.steps.map(function(x){return '<li><span class="L">'+x[0]+'</span><div><b>'+x[1]+'</b><span>'+x[2]+'</span></div></li>'}).join("")+'</ol>'+
+    '<div class="cta-row"><button class="btn small soft" data-go="parati" data-target="respira">Respirar con guía</button><button class="btn small ghost" data-go="situaciones">Ver todas las situaciones</button></div>';
+}
+$("#sosBtn").addEventListener("click",function(){openModal(sosHTML("hijo"),this)});
+$("#modalBody").addEventListener("click",function(e){var b=e.target.closest("[data-sos]");if(b){$("#modalBody").innerHTML=sosHTML(b.getAttribute("data-sos"))}});
+
+/* ---------- ARRANQUE ---------- */
+setAge(store.get("ccc-age","3–4") in EDADES ? store.get("ccc-age","3–4") : "3–4");
+sitAge="todas"; renderSits();
+var h=(location.hash||"").replace("#","");
+show(VIEWS.indexOf(h)>=0 ? h : store.get("ccc-view","inicio"));
+})();
+</script>
+
+</body></html>
